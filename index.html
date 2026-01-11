@@ -23,7 +23,7 @@
       background: #062125;
       padding: 16px 22px;
       display: flex;
-      justify-content: space-between;   /* SINISTRA / DESTRA reali */
+      justify-content: space-between;
       align-items: center;
       z-index: 1000;
     }
@@ -84,34 +84,88 @@
       border-radius: 8px; opacity: 0.85;
     }
 
+    /* ===== MODULO (ADATTATO ALLA BOZZA) ===== */
     .form-box {
-      background: rgba(255,255,255,0.06);
-      padding: 32px 26px;
-      border-radius: 6px;
+      background: rgba(255,255,255,0.08);
+      padding: 38px 34px 42px;
+      border-radius: 10px;
       text-align: left;
+      box-shadow: 0 0 0 1px rgba(143,191,197,.25);
     }
-    .form-box h3 { text-align: center; margin-bottom: 22px; }
+
+    .form-box h3 {
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .form-subtitle {
+      text-align: center;
+      font-size: 15px;
+      color: #cfd8dc;
+      margin-bottom: 28px;
+    }
+
     .form-box input,
     .form-box textarea {
-      width: 100%; padding: 12px; margin-bottom: 14px;
-      border-radius: 4px; border: none; font-size: 14px;
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 6px;
+      border: none;
+      font-size: 15px;
     }
 
-    .choice-buttons { display: flex; gap: 12px; margin: 14px 0 20px; }
-    .choice-btn {
-      flex: 1; padding: 12px; background: transparent;
-      border: 2px solid #8fbfc5; color: #8fbfc5;
-      border-radius: 4px; font-weight: bold; cursor: pointer; text-align: center;
+    .choice-label {
+      font-weight: bold;
+      margin: 8px 0 10px;
+      display: block;
     }
-    .choice-btn.active { background: #8fbfc5; color: #0b2f33; }
+
+    .choice-buttons {
+      display: flex;
+      gap: 14px;
+      margin: 10px 0 24px;
+    }
+
+    .choice-btn {
+      flex: 1;
+      padding: 14px;
+      background: transparent;
+      border: 2px solid #8fbfc5;
+      color: #8fbfc5;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      font-size: 15px;
+      transition: all .15s ease;
+    }
+
+    .choice-btn.active {
+      background: #8fbfc5;
+      color: #0b2f33;
+    }
 
     .form-box button[type="submit"] {
-      width: 100%; background: #8fbfc5; color: #0b2f33;
-      border: none; padding: 15px; border-radius: 4px;
-      font-weight: bold; cursor: pointer;
+      width: 100%;
+      background: #8fbfc5;
+      color: #0b2f33;
+      border: none;
+      padding: 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
-    footer { margin-top: 60px; font-size: 14px; color: #b0bec5; text-align: center; }
+    footer {
+      margin-top: 60px;
+      font-size: 14px;
+      color: #b0bec5;
+      text-align: center;
+    }
 
     /* ===== POPUP ===== */
     .popup-overlay {
@@ -159,7 +213,7 @@
     @media (max-width: 768px) {
       .hero h1 { font-size: 30px; }
       .about { padding: 26px 22px; }
-      .form-box { padding: 26px 22px; }
+      .form-box { padding: 28px 22px 32px; }
     }
   </style>
 </head>
@@ -181,6 +235,7 @@
 </header>
 
 <div class="container">
+
   <section class="hero">
     <h1>Daniele Zarlenga</h1>
     <h2>Consulente immobiliare per immobili commerciali</h2>
@@ -196,8 +251,13 @@
 
   <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
 
+  <!-- ===== MODULO ADATTATO ===== -->
   <section id="contatti" class="form-box">
     <h3>Parliamo del tuo immobile</h3>
+    <div class="form-subtitle">
+      Raccontami in due righe cosa stai valutando: vendere o affittare.  
+      Ti risponderò personalmente.
+    </div>
 
     <form action="https://formsubmit.co/contatti@danielezarlenga.it" method="POST">
       <input type="hidden" name="_subject" value="Nuova richiesta dal sito">
@@ -205,11 +265,11 @@
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://danielezarlenga.it/?inviato=ok">
 
-      <input type="text" name="nome" placeholder="Il tuo nome" required>
-      <input type="email" name="email" placeholder="La tua email" required>
-      <input type="tel" name="telefono" placeholder="Il tuo telefono" required>
+      <input type="text" name="nome" placeholder="Nome e cognome" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="telefono" placeholder="Telefono" required>
 
-      <strong>Di cosa hai bisogno?</strong>
+      <span class="choice-label">Di cosa hai bisogno?</span>
       <div class="choice-buttons">
         <button type="button" class="choice-btn" data-value="Devo vendere">Devo vendere</button>
         <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
@@ -218,7 +278,7 @@
       <input type="hidden" name="azione" id="azione">
 
       <textarea id="messaggio" name="messaggio" rows="4"
-        placeholder="Scrivimi due righe sul tuo immobile"></textarea>
+        placeholder="Ho un immobile commerciale e vorrei una consulenza per capire la strategia migliore."></textarea>
 
       <button type="submit">Invia richiesta</button>
     </form>
