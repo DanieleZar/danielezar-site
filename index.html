@@ -8,169 +8,187 @@
   <style>
     body {
       margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      background: #0b2f33; /* verde petrolio profondo */
+      font-family: Arial, sans-serif;
+      background: #0b2f33;
       color: #ffffff;
       line-height: 1.6;
     }
 
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      background: #062125;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header .logo {
+      max-width: 90px;
+    }
+
+    header .contacts a {
+      color: #8fbfc5;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    /* CONTAINER */
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 50px 20px 80px;
+      padding: 40px 20px;
       text-align: center;
     }
 
-    /* LOGO */
-    .logo {
-      max-width: 140px;
+    /* HERO */
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 18px;
+      font-weight: normal;
+      color: #cfd8dc;
       margin-bottom: 25px;
     }
 
-    /* FOTO PROFILO */
-    .profile {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #8fbfc5;
-      margin: 25px auto;
-      display: block;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin: 20px 0 5px;
-      letter-spacing: 0.5px;
-    }
-
-    h2 {
-      font-size: 22px;
-      font-weight: 300;
-      margin-top: 0;
-      color: #cfd8dc;
-    }
-
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: #8fbfc5;
-      margin: 30px auto;
-    }
-
-    p {
-      font-size: 18px;
-      margin-bottom: 20px;
-      color: #e0f2f1;
-    }
-
-    .box {
-      background: rgba(255,255,255,0.06);
-      padding: 30px;
-      border-radius: 6px;
-      margin: 40px 0;
-      text-align: left;
-    }
-
-    /* CTA */
-    .cta {
-      margin-top: 40px;
-    }
-
-    .cta a {
+    .hero-buttons a {
       display: inline-block;
       background: #8fbfc5;
       color: #0b2f33;
+      padding: 12px 22px;
+      margin: 6px;
+      border-radius: 4px;
       text-decoration: none;
-      padding: 14px 26px;
+      font-weight: bold;
+    }
+
+    /* FORM */
+    .form-box {
+      background: rgba(255,255,255,0.06);
+      padding: 25px;
+      border-radius: 6px;
+      margin: 50px 0;
+      text-align: left;
+    }
+
+    .form-box h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-box input,
+    .form-box textarea,
+    .form-box select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .form-box button {
+      width: 100%;
+      background: #8fbfc5;
+      color: #0b2f33;
+      border: none;
+      padding: 14px;
       border-radius: 4px;
       font-weight: bold;
-      margin: 10px 8px;
-      transition: all 0.2s ease;
+      cursor: pointer;
     }
 
-    .cta a:hover {
-      background: #a9d3d8;
+    /* IMMAGINI */
+    .section-image {
+      width: 100%;
+      max-width: 700px;
+      margin: 40px auto;
+      display: block;
+      border-radius: 8px;
     }
 
+    /* FOOTER */
     footer {
-      margin-top: 70px;
+      margin-top: 60px;
       font-size: 14px;
       color: #b0bec5;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <!-- LOGO -->
-    <img src="logo-dz.png" alt="Logo Daniele Zarlenga" class="logo">
+<header>
+  <img src="logo-dz.png" alt="Logo" class="logo">
+  <div class="contacts">
+    <a href="mailto:contatti@danielezarlenga.it">Email</a>
+    <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
+  </div>
+</header>
 
-    <!-- IMMAGINE CONTESTO (EDIFICIO) -->
-    <img src="edificio-commerciale.jpg" alt="Edificio commerciale" style="width:100%; max-width:900px; margin:30px auto 10px; display:block; border-radius:8px;">
+<div class="container">
 
-    <!-- FOTO PROFILO -->
-    <img src="daniele.jpg" alt="Daniele Zarlenga" class="profile">
-
+  <!-- HERO -->
+  <section class="hero">
     <h1>Daniele Zarlenga</h1>
     <h2>Consulente immobiliare per immobili commerciali</h2>
 
-    <div class="divider"></div>
-
-    <p>
-      Lavoro con imprenditori e proprietari che vogliono
-      <strong>vendere o locare un immobile commerciale</strong>
-      senza affidarsi a promesse irrealistiche,
-      ma a una strategia fondata su dati reali e decisioni lucide.
-    </p>
-
-    <!-- IMMAGINE SPAZIO INTERNO -->
-    <img src="spazio-interno.jpg" alt="Spazio commerciale interno" style="width:100%; max-width:900px; margin:40px auto; display:block; border-radius:8px;">
-
-    <div class="box">
-      <p>
-        Nel mercato immobiliare commerciale il problema raramente è il prezzo in sé.
-        Il vero errore nasce quasi sempre <strong>da come si parte</strong>:
-        senza una lettura del mercato,
-        senza una strategia,
-        solo con un annuncio e una speranza.
-      </p>
-
-      <p>
-        Il mio lavoro inizia prima dei numeri.
-        Inizia dall’analisi,
-        dal posizionamento corretto dell’immobile
-        e dalla definizione di un percorso chiaro verso l’obiettivo.
-      </p>
+    <div class="hero-buttons">
+      <a href="#contatti">Devo vendere</a>
+      <a href="#contatti">Devo affittare</a>
     </div>
+  </section>
 
-    <p>
-      Non prometto tempi irrealistici.
-      Non utilizzo leve emotive.
-      Offro un metodo strutturato per chi vuole
-      <strong>ridurre il rischio di perdere tempo e valore</strong>.
-    </p>
+  <!-- IMMAGINE CONTESTO -->
+  <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="section-image">
 
-    <!-- CTA -->
-    <div class="cta">
-      <a href="mailto:contatti@danielezarlenga.it">
-        Scrivimi via email
-      </a>
+  <!-- TESTO -->
+  <p>
+    Lavoro con imprenditori e proprietari che vogliono
+    <strong>vendere o locare un immobile commerciale</strong>
+    con una strategia fondata su dati reali e decisioni lucide,
+    senza affidarsi a promesse irrealistiche.
+  </p>
 
-      <a href="https://wa.me/393496115240" target="_blank">
-        Contattami su WhatsApp
-      </a>
+  <!-- FORM CONTATTI -->
+  <section id="contatti" class="form-box">
+    <h3>Parliamo del tuo immobile</h3>
 
-      <a href="https://linktr.ee/Danieleconsulenteimmobiliare" target="_blank">
-        Biglietto da visita
-      </a>
-    </div>
+    <form action="mailto:contatti@danielezarlenga.it" method="post" enctype="text/plain">
+      <input type="text" name="Nome" placeholder="Il tuo nome" required>
+      <input type="email" name="Email" placeholder="La tua email" required>
+      <input type="tel" name="Telefono" placeholder="Il tuo telefono" required>
 
-    <footer>
-      © 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
-    </footer>
+      <select name="Richiesta">
+        <option>Devo vendere</option>
+        <option>Devo affittare</option>
+      </select>
 
-  </div>
+      <textarea name="Messaggio" rows="4">
+Ho un locale da vendere/affittare e vorrei essere contattato.
+      </textarea>
+
+      <button type="submit">Invia richiesta</button>
+    </form>
+  </section>
+
+  <!-- IMMAGINE SUPPORTO -->
+  <img src="spazio-interno.jpg" alt="Spazio commerciale interno" class="section-image">
+
+  <footer>
+    © 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
+  </footer>
+
+</div>
+
 </body>
 </html>
