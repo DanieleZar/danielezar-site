@@ -1,41 +1,8 @@
-[11:54, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Contatti – Daniele Zarlenga</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("Ql5iw080SMexWj7VE");
-    })();
-  </script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f7f8;
-      padding: 20px;
-    }
-    .form-wrapper {
-      max-width: 520px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    h2 {
-      margin-bottom: 20px;
-    }
-    input, select, textarea …
-[12:00, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>Consulenza immobiliare commerciale – Daniele Zarlenga</title>
+  <title>Daniele Zarlenga – Consulenza immobiliare commerciale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- EmailJS -->
@@ -49,46 +16,93 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #f6f7f8;
       margin: 0;
-      padding: 0;
+      background: #f6f7f8;
       color: #222;
     }
+    header {
+      background: #0f2f2a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      max-height: 70px;
+      margin-bottom: 10px;
+    }
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 40px 20px;
     }
-    h1 {
-      font-size: 32px;
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+    }
+    .hero-text {
+      flex: 1;
+    }
+    .hero-text h1 {
+      font-size: 34px;
       margin-bottom: 10px;
     }
-    h2 {
+    .hero-text h2 {
       font-size: 22px;
       font-weight: normal;
       color: #555;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-    p {
+    .hero-text p {
       line-height: 1.6;
-      margin-bottom: 15px;
+    }
+    .hero-img {
+      flex: 1;
+      text-align: center;
+    }
+    .hero-img img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .section {
+      margin-top: 60px;
+    }
+    .section h3 {
+      font-size: 26px;
+      margin-bottom: 20px;
     }
     .box {
       background: #fff;
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      margin-top: 30px;
     }
     ul {
       margin-left: 20px;
+      line-height: 1.6;
     }
-    .cta {
-      font-weight: bold;
+    .buttons {
       margin-top: 30px;
-      margin-bottom: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
     }
-
+    .buttons a {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #1f3d2b;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    .buttons a.secondary {
+      background: #555;
+    }
+    form {
+      margin-top: 30px;
+    }
     input, select, textarea {
       width: 100%;
       padding: 10px;
@@ -110,62 +124,115 @@
     button:hover {
       background: #173023;
     }
-    #formMessage {
+    .message-box {
       margin-top: 15px;
+      padding: 12px;
+      background: #eef3f1;
+      border-left: 4px solid #1f3d2b;
+      display: none;
+    }
+    footer {
+      background: #0f2f2a;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
       font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
+<header>
+  <!-- INSERISCI QUI IL TUO LOGO -->
+  <!-- <img src="logo.png" alt="Daniele Zarlenga"> -->
+  <strong>Daniele Zarlenga</strong><br>
+  Consulenza immobiliare commerciale
+</header>
 
-    <h1>Vendere o affittare un locale commerciale non è una questione di fortuna.</h1>
-    <h2>È una questione di strategia.</h2>
+<div class="container">
 
-    <p>
-      Se il tuo immobile è fermo, spesso non è colpa del mercato.
-      È perché è stato impostato senza un metodo chiaro fin dall’inizio.
-    </p>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Vendere o affittare un locale commerciale non è una questione di fortuna.</h1>
+      <h2>È una questione di strategia.</h2>
 
-    <p>
-      Lavoro con proprietari e imprenditori che vogliono risultati reali, non promesse.
-      Prima di parlare di prezzo, partiamo da:
-    </p>
+      <p>
+        Se il tuo immobile è fermo, spesso non è colpa del mercato.
+        È perché è stato impostato senza un metodo chiaro fin dall’inizio.
+      </p>
 
-    <ul>
-      <li>analisi del mercato reale</li>
-      <li>posizionamento corretto</li>
-      <li>obiettivo chiaro</li>
-      <li>strategia di uscita</li>
-    </ul>
+      <p>
+        Lavoro con proprietari e imprenditori che vogliono risultati reali, non promesse.
+        Prima di parlare di prezzo, partiamo da:
+      </p>
 
-    <p>
-      Solo così vendere o affittare diventa un processo guidato, non un tentativo.
-    </p>
+      <ul>
+        <li>analisi del mercato reale</li>
+        <li>posizionamento corretto</li>
+        <li>obiettivo chiaro</li>
+        <li>strategia di uscita</li>
+      </ul>
+    </div>
 
+    <div class="hero-img">
+      <!-- INSERISCI QUI LA TUA FOTO -->
+      <!-- <img src="foto-daniele.jpg" alt="Daniele Zarlenga"> -->
+      <div style="background:#ddd; height:260px; border-radius:8px; display:flex; align-items:center; justify-content:center;">
+        <em>Spazio foto profilo</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPROCCIO -->
+  <div class="section">
+    <h3>Il mio approccio</h3>
     <div class="box">
       <p>
-        Con il mio approccio eviti:
+        Nel mercato immobiliare commerciale vedo ogni giorno lo stesso errore:
+        si parte dal prezzo, senza una strategia.
       </p>
+      <p>
+        Io lavoro al contrario.
+        Prima costruisco l’impostazione corretta, poi i numeri.
+      </p>
+      <p>
+        Questo significa meno tempo perso, meno ribassi, più controllo del processo.
+      </p>
+    </div>
+  </div>
+
+  <!-- VALORE -->
+  <div class="section">
+    <h3>Cosa eviti con il mio metodo</h3>
+    <div class="box">
       <ul>
         <li>mesi di immobilismo</li>
-        <li>ribassi continui</li>
         <li>trattative senza direzione</li>
-        <li>perdita di tempo e di credibilità sul mercato</li>
+        <li>continue richieste di ribasso</li>
+        <li>perdita di credibilità sul mercato</li>
       </ul>
+    </div>
+  </div>
 
-      <p class="cta">
+  <!-- CONTATTI + MODULO -->
+  <div class="section">
+    <h3>Parliamone</h3>
+    <div class="box">
+
+      <p><strong>
         Vuoi capire se il tuo locale è fermo per colpa del mercato o per come è stato impostato?
-        Lascia i tuoi dati: ti contatto personalmente.
-      </p>
+      </strong></p>
+
+      <div class="buttons">
+        <a href="mailto:contatti@danielezarlenga.it">Scrivimi via email</a>
+        <a href="https://wa.me/39XXXXXXXXXX" class="secondary">Scrivimi su WhatsApp</a>
+      </div>
 
       <form id="contactForm">
-
         <input type="text" name="nome" placeholder="Nome e cognome" required>
-
         <input type="email" name="email" placeholder="Email" required>
-
         <input type="tel" name="telefono" placeholder="Telefono">
 
         <select name="azione" required>
@@ -179,42 +246,47 @@
         <button type="submit">Invia richiesta</button>
       </form>
 
-      <div id="formMessage" style="display:none;"></div>
+      <div id="formMessage" class="message-box"></div>
     </div>
-
   </div>
 
-  <script>
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+</div>
 
-      const msgBox = document.getElementById("formMessage");
-      msgBox.style.display = "block";
-      msgBox.style.color = "#333";
-      msgBox.innerHTML = "Invio in corso...";
+<footer>
+  © 2026 Daniele Zarlenga – Consulenza immobiliare commerciale
+</footer>
 
-      emailjs.sendForm(
-        "service_rx3qo91",
-        "template_e7tleok",
-        this,
-        "Ql5iw080SMexWj7VE"
-    )
-     ).then(function() {
+<!-- SCRIPT INVIO EMAIL -->
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-          msgBox.innerHTML = "<strong>Richiesta inviata con successo.</strong><br>Ti contatterò personalmente il prima possibile.";
-          msgBox.style.color = "#1f3d2b";
+  const msgBox = document.getElementById("formMessage");
+  msgBox.style.display = "block";
+  msgBox.style.color = "#222";
+  msgBox.innerHTML = "Invio in corso...";
 
-          document.getElementById("contactForm").reset();
+  emailjs.sendForm(
+    "service_rx3qo91",
+    "template_e7tleok",
+    this,
+    "INSERISCI_QUI_LA_TUA_PUBLIC_KEY"
+  ).then(function() {
 
-      }, function(error) {
+      msgBox.innerHTML = "<strong>Richiesta inviata con successo.</strong><br>Ti contatterò personalmente il prima possibile.";
+      msgBox.style.color = "#1f3d2b";
 
-          msgBox.innerHTML = "<strong>Errore nell’invio.</strong><br>Se il problema persiste, contattami direttamente a contatti@danielezarlenga.it.";
-          msgBox.style.color = "#a00000";
+      document.getElementById("contactForm").reset();
 
-          console.error("EmailJS error:", error);
-      });
-    });
-  </script>
+  }, function(error) {
+
+      msgBox.innerHTML = "<strong>Errore nell’invio.</strong><br>Se il problema persiste, scrivimi direttamente a contatti@danielezarlenga.it.";
+      msgBox.style.color = "#a00000";
+
+      console.error("EmailJS error:", error);
+  });
+});
+</script>
 
 </body>
 </html>
