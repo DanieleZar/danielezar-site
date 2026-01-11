@@ -1,4 +1,4 @@
-[11:52, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
+[11:54, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -9,7 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("INSERISCI_QUI_LA_TUA_PUBLIC_KEY");
+      emailjs.init("x50IQzD51z9tJgreb");
     })();
   </script>
 
@@ -31,11 +31,11 @@
       margin-bottom: 20px;
     }
     input, select, textarea …
-[11:54, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
+[12:00, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Contatti – Daniele Zarlenga</title>
+  <title>Consulenza immobiliare commerciale – Daniele Zarlenga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- EmailJS -->
@@ -50,19 +50,45 @@
     body {
       font-family: Arial, sans-serif;
       background: #f6f7f8;
-      padding: 20px;
+      margin: 0;
+      padding: 0;
+      color: #222;
     }
-    .form-wrapper {
-      max-width: 520px;
+    .container {
+      max-width: 900px;
       margin: 0 auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
     }
     h2 {
-      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: normal;
+      color: #555;
+      margin-bottom: 30px;
     }
+    p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    .box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      margin-top: 30px;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .cta {
+      font-weight: bold;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+
     input, select, textarea {
       width: 100%;
       padding: 10px;
@@ -92,29 +118,70 @@
 </head>
 <body>
 
-  <div class="form-wrapper">
-    <h2>Richiedi informazioni</h2>
+  <div class="container">
 
-    <form id="contactForm">
+    <h1>Vendere o affittare un locale commerciale non è una questione di fortuna.</h1>
+    <h2>È una questione di strategia.</h2>
 
-      <input type="text" name="nome" placeholder="Nome e cognome" required>
+    <p>
+      Se il tuo immobile è fermo, spesso non è colpa del mercato.
+      È perché è stato impostato senza un metodo chiaro fin dall’inizio.
+    </p>
 
-      <input type="email" name="email" placeholder="Email" required>
+    <p>
+      Lavoro con proprietari e imprenditori che vogliono risultati reali, non promesse.
+      Prima di parlare di prezzo, partiamo da:
+    </p>
 
-      <input type="tel" name="telefono" placeholder="Telefono">
+    <ul>
+      <li>analisi del mercato reale</li>
+      <li>posizionamento corretto</li>
+      <li>obiettivo chiaro</li>
+      <li>strategia di uscita</li>
+    </ul>
 
-      <select name="azione" required>
-        <option value="">Seleziona la richiesta</option>
-        <option value="Vendere">Voglio vendere</option>
-        <option value="Affittare">Voglio affittare</option>
-      </select>
+    <p>
+      Solo così vendere o affittare diventa un processo guidato, non un tentativo.
+    </p>
 
-      <textarea name="messaggio" placeholder="Scrivi qui il tuo messaggio"></textarea>
+    <div class="box">
+      <p>
+        Con il mio approccio eviti:
+      </p>
+      <ul>
+        <li>mesi di immobilismo</li>
+        <li>ribassi continui</li>
+        <li>trattative senza direzione</li>
+        <li>perdita di tempo e di credibilità sul mercato</li>
+      </ul>
 
-      <button type="submit">Invia richiesta</button>
-    </form>
+      <p class="cta">
+        Vuoi capire se il tuo locale è fermo per colpa del mercato o per come è stato impostato?
+        Lascia i tuoi dati: ti contatto personalmente.
+      </p>
 
-    <div id="formMessage" style="display:none;"></div>
+      <form id="contactForm">
+
+        <input type="text" name="nome" placeholder="Nome e cognome" required>
+
+        <input type="email" name="email" placeholder="Email" required>
+
+        <input type="tel" name="telefono" placeholder="Telefono">
+
+        <select name="azione" required>
+          <option value="">Seleziona la richiesta</option>
+          <option value="Vendere">Voglio vendere</option>
+          <option value="Affittare">Voglio affittare</option>
+        </select>
+
+        <textarea name="messaggio" placeholder="Scrivi qui il tuo messaggio"></textarea>
+
+        <button type="submit">Invia richiesta</button>
+      </form>
+
+      <div id="formMessage" style="display:none;"></div>
+    </div>
+
   </div>
 
   <script>
@@ -127,8 +194,8 @@
       msgBox.innerHTML = "Invio in corso...";
 
       emailjs.sendForm(
-        "service_rx3qo91",     // Service ID
-        "template_e7tleok",   // Template ID
+        "service_rx3qo91",
+        "template_e7tleok",
         this
       ).then(function() {
 
