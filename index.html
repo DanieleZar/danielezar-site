@@ -6,214 +6,214 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b2f33;
-      color: #ffffff;
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#0b2f33;
+      color:#fff;
+      line-height:1.6
     }
-    img { max-width: 100%; height: auto; display: block; }
+    img{max-width:100%;display:block}
 
-    /* ===== HEADER ===== */
-    header {
-      position: sticky;
-      top: 0;
-      background: #062125;
-      padding: 16px 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
+    /* HEADER */
+    header{
+      position:sticky;
+      top:0;
+      background:#062125;
+      padding:16px 22px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000
     }
-    .header-left .logo { max-width: 120px; }
-
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 16px;
+    .logo{max-width:120px}
+    .header-right{
+      display:flex;
+      align-items:center;
+      gap:16px
     }
-    .header-right a {
-      color: #8fbfc5;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
+    .header-right a{
+      color:#8fbfc5;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:14px
     }
-    .btn-vcard {
-      background: #ffffff;
-      color: #0b2f33 !important;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: bold;
-      text-decoration: none;
-      border: 1px solid #0b2f33;
-      white-space: nowrap;
-    }
-
-    /* ===== LAYOUT ===== */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 35px 20px 70px;
-      text-align: center;
-    }
-    section { margin-bottom: 55px; }
-
-    .hero h1 { font-size: 34px; margin-bottom: 10px; }
-    .hero h2 { font-size: 18px; font-weight: normal; color: #cfd8dc; }
-
-    .about {
-      background: rgba(255,255,255,0.06);
-      padding: 32px 26px;
-      border-radius: 6px;
-      text-align: left;
-    }
-    .about img {
-      width: 120px; height: 120px; object-fit: cover;
-      border-radius: 50%; border: 3px solid #8fbfc5;
-      margin: 0 auto 20px;
-    }
-    .about h3 { text-align: center; margin-bottom: 18px; }
-    .about p { color: #e0f2f1; font-size: 15px; margin-bottom: 14px; }
-
-    .side-image {
-      width: 220px; max-width: 90%;
-      margin: 0 auto 30px;
-      border-radius: 8px; opacity: 0.85;
+    .btn-vcard{
+      background:#fff;
+      color:#0b2f33!important;
+      padding:8px 14px;
+      border-radius:6px;
+      font-size:13px;
+      font-weight:bold;
+      text-decoration:none;
+      border:1px solid #0b2f33;
+      white-space:nowrap
     }
 
-    /* ===== MODULO (ADATTATO ALLA BOZZA) ===== */
-    .form-box {
-      background: rgba(255,255,255,0.08);
-      padding: 38px 34px 42px;
-      border-radius: 10px;
-      text-align: left;
-      box-shadow: 0 0 0 1px rgba(143,191,197,.25);
+    /* LAYOUT */
+    .container{
+      max-width:960px;
+      margin:0 auto;
+      padding:40px 20px 80px;
+      text-align:center
+    }
+    section{margin-bottom:70px}
+
+    .hero h1{font-size:36px;margin-bottom:10px}
+    .hero h2{font-size:18px;font-weight:normal;color:#cfd8dc}
+
+    /* ABOUT */
+    .about{
+      background:rgba(255,255,255,.06);
+      padding:36px 32px;
+      border-radius:10px;
+      text-align:left
+    }
+    .about img{
+      width:130px;
+      height:130px;
+      object-fit:cover;
+      border-radius:50%;
+      border:3px solid #8fbfc5;
+      margin:0 auto 22px
+    }
+    .about h3{text-align:center;margin-bottom:18px}
+    .about p{color:#e0f2f1;font-size:15px;margin-bottom:14px}
+
+    .side-image{
+      width:260px;
+      margin:0 auto 40px;
+      border-radius:10px;
+      opacity:.9
     }
 
-    .form-box h3 {
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 22px;
+    /* ===== MODULO – IDENTICO ALLA BOZZA ===== */
+    .contact-section{
+      background:#062125;
+      padding:50px 40px 55px;
+      border-radius:14px;
+      box-shadow:0 0 0 1px rgba(143,191,197,.25),
+                 0 20px 40px rgba(0,0,0,.25);
+      text-align:left
     }
 
-    .form-subtitle {
-      text-align: center;
-      font-size: 15px;
-      color: #cfd8dc;
-      margin-bottom: 28px;
+    .contact-section h3{
+      text-align:center;
+      font-size:24px;
+      margin-bottom:8px
     }
 
-    .form-box input,
-    .form-box textarea {
-      width: 100%;
-      padding: 14px;
-      margin-bottom: 16px;
-      border-radius: 6px;
-      border: none;
-      font-size: 15px;
+    .contact-subtitle{
+      text-align:center;
+      font-size:15px;
+      color:#cfd8dc;
+      margin-bottom:32px
     }
 
-    .choice-label {
-      font-weight: bold;
-      margin: 8px 0 10px;
-      display: block;
+    .contact-section input,
+    .contact-section textarea{
+      width:100%;
+      padding:15px;
+      margin-bottom:18px;
+      border-radius:8px;
+      border:none;
+      font-size:15px
     }
 
-    .choice-buttons {
-      display: flex;
-      gap: 14px;
-      margin: 10px 0 24px;
+    .contact-label{
+      font-weight:bold;
+      margin:6px 0 10px;
+      display:block
     }
 
-    .choice-btn {
-      flex: 1;
-      padding: 14px;
-      background: transparent;
-      border: 2px solid #8fbfc5;
-      color: #8fbfc5;
-      border-radius: 6px;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
-      font-size: 15px;
-      transition: all .15s ease;
+    .choice-buttons{
+      display:flex;
+      gap:16px;
+      margin:10px 0 26px
     }
 
-    .choice-btn.active {
-      background: #8fbfc5;
-      color: #0b2f33;
+    .choice-btn{
+      flex:1;
+      padding:15px;
+      background:transparent;
+      border:2px solid #8fbfc5;
+      color:#8fbfc5;
+      border-radius:8px;
+      font-weight:bold;
+      cursor:pointer;
+      text-align:center;
+      font-size:15px;
+      transition:.15s ease
     }
 
-    .form-box button[type="submit"] {
-      width: 100%;
-      background: #8fbfc5;
-      color: #0b2f33;
-      border: none;
-      padding: 16px;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
+    .choice-btn.active{
+      background:#8fbfc5;
+      color:#0b2f33
     }
 
-    footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #b0bec5;
-      text-align: center;
+    .contact-section button[type="submit"]{
+      width:100%;
+      background:#8fbfc5;
+      color:#0b2f33;
+      border:none;
+      padding:18px;
+      border-radius:8px;
+      font-weight:bold;
+      font-size:16px;
+      cursor:pointer
     }
 
-    /* ===== POPUP ===== */
-    .popup-overlay {
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,0.65);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 99999;
-    }
-    .popup-box {
-      position: relative;
-      background: #062125;
-      border: 2px solid #8fbfc5;
-      padding: 28px 26px 24px;
-      border-radius: 10px;
-      max-width: 420px;
-      width: 90%;
-      text-align: center;
-      color: #ffffff;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
-      animation: popupIn .25s ease-out;
-    }
-    @keyframes popupIn {
-      from { transform: scale(.9); opacity: 0; }
-      to   { transform: scale(1); opacity: 1; }
-    }
-    .popup-x {
-      position: absolute;
-      top: 8px; right: 10px;
-      font-size: 20px;
-      color: #8fbfc5;
-      cursor: pointer;
-    }
-    .popup-close-btn {
-      background: #8fbfc5;
-      color: #0b2f33;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
+    footer{
+      margin-top:70px;
+      font-size:14px;
+      color:#b0bec5;
+      text-align:center
     }
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 30px; }
-      .about { padding: 26px 22px; }
-      .form-box { padding: 28px 22px 32px; }
+    /* POPUP */
+    .popup-overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,.65);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:99999
+    }
+    .popup-box{
+      position:relative;
+      background:#062125;
+      border:2px solid #8fbfc5;
+      padding:30px 26px 26px;
+      border-radius:12px;
+      max-width:420px;
+      width:90%;
+      text-align:center;
+      color:#fff;
+      box-shadow:0 0 30px rgba(0,0,0,.5)
+    }
+    .popup-x{
+      position:absolute;
+      top:8px;
+      right:12px;
+      font-size:22px;
+      color:#8fbfc5;
+      cursor:pointer
+    }
+    .popup-close-btn{
+      background:#8fbfc5;
+      color:#0b2f33;
+      border:none;
+      padding:10px 20px;
+      border-radius:6px;
+      font-weight:bold;
+      cursor:pointer
+    }
+
+    @media(max-width:768px){
+      .hero h1{font-size:30px}
+      .contact-section{padding:40px 24px 46px}
     }
   </style>
 </head>
@@ -221,10 +221,7 @@
 <body>
 
 <header>
-  <div class="header-left">
-    <img src="logo-dz.png" alt="Logo" class="logo">
-  </div>
-
+  <img src="logo-dz.png" alt="Logo" class="logo">
   <div class="header-right">
     <a href="mailto:contatti@danielezarlenga.it">Email</a>
     <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
@@ -251,10 +248,10 @@
 
   <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
 
-  <!-- ===== MODULO ADATTATO ===== -->
-  <section id="contatti" class="form-box">
+  <!-- ===== MODULO IDENTICO ALLA BOZZA ===== -->
+  <section id="contatti" class="contact-section">
     <h3>Parliamo del tuo immobile</h3>
-    <div class="form-subtitle">
+    <div class="contact-subtitle">
       Raccontami in due righe cosa stai valutando: vendere o affittare.  
       Ti risponderò personalmente.
     </div>
@@ -269,7 +266,7 @@
       <input type="email" name="email" placeholder="Email" required>
       <input type="tel" name="telefono" placeholder="Telefono" required>
 
-      <span class="choice-label">Di cosa hai bisogno?</span>
+      <span class="contact-label">Di cosa hai bisogno?</span>
       <div class="choice-buttons">
         <button type="button" class="choice-btn" data-value="Devo vendere">Devo vendere</button>
         <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
@@ -305,42 +302,34 @@
 </div>
 
 <script>
-  // Pulsanti scelta + testo automatico
-  const buttons = document.querySelectorAll('.choice-btn');
-  const hiddenInput = document.getElementById('azione');
-  const messageBox = document.getElementById('messaggio');
+  const buttons=document.querySelectorAll('.choice-btn');
+  const hiddenInput=document.getElementById('azione');
+  const messageBox=document.getElementById('messaggio');
 
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
+  buttons.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      buttons.forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
-      hiddenInput.value = btn.dataset.value;
+      hiddenInput.value=btn.dataset.value;
 
-      if (btn.dataset.value === "Devo vendere") {
-        messageBox.value =
-          "Ho un immobile commerciale da vendere e desidero essere contattato per una valutazione professionale.";
-      } else {
-        messageBox.value =
-          "Ho un immobile commerciale da affittare e desidero essere contattato per una consulenza.";
+      if(btn.dataset.value==="Devo vendere"){
+        messageBox.value="Ho un immobile commerciale da vendere e desidero essere contattato per una valutazione professionale.";
+      }else{
+        messageBox.value="Ho un immobile commerciale da affittare e desidero essere contattato per una consulenza.";
       }
     });
   });
 
-  // Popup + suono dopo invio
-  const params = new URLSearchParams(window.location.search);
-  if (params.get("inviato") === "ok") {
-    const overlay = document.getElementById("popupOverlay");
-    const sound = document.getElementById("notifySound");
-
-    overlay.style.display = "flex";
-
-    if (sound) {
-      sound.play().catch(() => {});
-    }
+  const params=new URLSearchParams(window.location.search);
+  if(params.get("inviato")==="ok"){
+    const overlay=document.getElementById("popupOverlay");
+    const sound=document.getElementById("notifySound");
+    overlay.style.display="flex";
+    if(sound){sound.play().catch(()=>{});}
   }
 
-  function closePopup() {
-    document.getElementById("popupOverlay").style.display = "none";
+  function closePopup(){
+    document.getElementById("popupOverlay").style.display="none";
   }
 </script>
 
