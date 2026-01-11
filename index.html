@@ -123,14 +123,27 @@
       font-size: 14px;
     }
 
+    /* SCELTA */
     .form-choice {
       margin-bottom: 20px;
       font-size: 15px;
     }
 
-    .form-choice label {
-      margin-right: 25px;
+    .form-choice strong {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .radio-group label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
       cursor: pointer;
+    }
+
+    .radio-group input[type="radio"] {
+      margin: 0;
     }
 
     .form-box button {
@@ -208,15 +221,15 @@
     </p>
 
     <p>
-      Nel tempo ho visto troppe operazioni partire male:
-      prezzo messo “a sensazione”, annunci copiati, mesi persi senza risultati.
+      Ho visto troppe operazioni partire male:
+      prezzo deciso “a sensazione”, annunci copiati, mesi persi senza risultati.
       Per questo oggi il mio lavoro è consulenziale prima che commerciale:
       analisi, strategia, posizionamento e solo dopo numeri.
     </p>
 
     <p>
       Il mio obiettivo non è promettere tempi impossibili,
-      ma aiutarti a prendere decisioni lucide che tutelino il valore del tuo immobile.
+      ma aiutarti a prendere decisioni lucide che tutelino davvero il valore del tuo immobile.
     </p>
   </section>
 
@@ -228,28 +241,29 @@
     <h3>Parliamo del tuo immobile</h3>
 
     <form action="mailto:contatti@danielezarlenga.it" method="post" enctype="text/plain">
+
       <input type="text" name="Nome" placeholder="Il tuo nome" required>
       <input type="email" name="Email" placeholder="La tua email" required>
       <input type="tel" name="Telefono" placeholder="Il tuo telefono" required>
 
-      <!-- SCELTA CON FLAG -->
+      <!-- SCELTA CON FLAG ALLINEATI -->
       <div class="form-choice">
-        <strong>Di cosa hai bisogno?</strong><br><br>
+        <strong>Di cosa hai bisogno?</strong>
 
-        <label>
-          <input type="radio" name="Richiesta" value="Devo vendere" required>
-          Devo vendere
-        </label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="Richiesta" value="Devo vendere" required>
+            Devo vendere
+          </label>
 
-        <label>
-          <input type="radio" name="Richiesta" value="Devo affittare">
-          Devo affittare
-        </label>
+          <label>
+            <input type="radio" name="Richiesta" value="Devo affittare">
+            Devo affittare
+          </label>
+        </div>
       </div>
 
-      <textarea name="Messaggio" rows="4">
-Ho un locale da vendere/affittare e vorrei essere contattato.
-      </textarea>
+      <textarea name="Messaggio" rows="4" placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)"></textarea>
 
       <button type="submit">Invia richiesta</button>
     </form>
