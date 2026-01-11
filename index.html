@@ -2,334 +2,93 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Daniele Zarlenga – Consulenza Immobiliare Commerciale</title>
+  <title>Test EmailJS – Daniele Zarlenga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ================= EMAILJS ================= -->
+  <!-- EMAILJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    (function () {
-      emailjs.init("Ql5iw080SMexWj7VE");
+    (function(){
+      emailjs.init("QI5iw080SMexWj7VE");   // ✅ TUA PUBLIC KEY
     })();
   </script>
 
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background: #0b2f33;
-      color: #ffffff;
-      line-height: 1.7;
+      color: #fff;
+      padding: 40px;
+      text-align: center;
     }
-
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      background: #062125;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    header .logo {
-      max-width: 130px;
-    }
-
-    header .contacts a {
-      color: #8fbfc5;
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 15px;
-      font-size: 14px;
-    }
-
-    /* CONTAINER */
-    .container {
-      max-width: 900px;
+    .box {
+      max-width: 500px;
       margin: 0 auto;
-      padding: 50px 20px 80px;
-      text-align: center;
+      background: rgba(255,255,255,0.08);
+      padding: 30px;
+      border-radius: 8px;
     }
-
-    section {
-      margin-bottom: 70px;
-    }
-
-    /* HERO */
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 14px;
-    }
-
-    .hero h2 {
-      font-size: 18px;
-      font-weight: normal;
-      color: #cfd8dc;
-    }
-
-    /* CHI SONO */
-    .about {
-      background: rgba(255,255,255,0.06);
-      padding: 40px 30px;
-      border-radius: 6px;
-      text-align: left;
-    }
-
-    .about img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #8fbfc5;
-      display: block;
-      margin: 0 auto 25px;
-    }
-
-    .about h3 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      color: #e0f2f1;
+    button {
+      padding: 15px 25px;
       font-size: 16px;
-      margin-bottom: 18px;
-    }
-
-    /* IMMAGINE LATERALE */
-    .side-image {
-      max-width: 280px;
-      margin: 0 auto 40px;
-      display: block;
-      border-radius: 8px;
-      opacity: 0.85;
-    }
-
-    /* FORM */
-    .form-box {
-      background: rgba(255,255,255,0.06);
-      padding: 35px 30px;
-      border-radius: 6px;
-      text-align: left;
-    }
-
-    .form-box h3 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .form-box input,
-    .form-box textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 14px;
-      border-radius: 4px;
-      border: none;
-      font-size: 14px;
-    }
-
-    /* BOTTONI SCELTA */
-    .choice-buttons {
-      display: flex;
-      gap: 12px;
-      margin: 14px 0 20px;
-    }
-
-    .choice-btn {
-      flex: 1;
-      padding: 12px;
-      background: transparent;
-      border: 2px solid #8fbfc5;
-      color: #8fbfc5;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    .choice-btn.active {
-      background: #8fbfc5;
-      color: #0b2f33;
-    }
-
-    .form-box button[type="submit"] {
-      width: 100%;
       background: #8fbfc5;
       color: #0b2f33;
       border: none;
-      padding: 15px;
       border-radius: 4px;
-      font-weight: bold;
       cursor: pointer;
+      font-weight: bold;
     }
-
-    /* MESSAGGI */
-    .message-box {
-      margin-top: 15px;
-      padding: 12px;
-      background: rgba(143,191,197,0.15);
-      border-left: 4px solid #8fbfc5;
-      display: none;
-      color: #e0f2f1;
-    }
-
-    /* IMMAGINE FINALE */
-    .section-image {
-      width: 100%;
-      max-width: 600px;
-      margin: 50px auto;
-      display: block;
-      border-radius: 8px;
-      opacity: 0.9;
-    }
-
-    footer {
-      margin-top: 70px;
-      font-size: 14px;
-      color: #b0bec5;
-      text-align: center;
+    #result {
+      margin-top: 20px;
+      font-size: 15px;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo-dz.png" alt="Logo Daniele Zarlenga" class="logo">
-  <div class="contacts">
-    <a href="mailto:contatti@danielezarlenga.it">Email</a>
-    <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
+  <div class="box">
+    <h2>TEST EMAILJS</h2>
+    <p>Clicca il bottone per inviare una mail di prova.</p>
+
+    <button onclick="testEmailJS()">INVIA TEST</button>
+
+    <div id="result"></div>
   </div>
-</header>
 
-<div class="container">
+  <script>
+    function testEmailJS() {
+      const resultBox = document.getElementById("result");
+      resultBox.innerHTML = "Invio in corso...";
+      resultBox.style.color = "#fff";
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Daniele Zarlenga</h1>
-    <h2>Consulente immobiliare per immobili commerciali</h2>
-  </section>
+      emailjs.send(
+        "service_rx3qo91",      // ✅ SERVICE ID
+        "template_e7tleok",    // ✅ TEMPLATE ID
+        {
+          nome: "TEST",
+          email: "test@test.it",
+          telefono: "000",
+          azione: "Test automatico",
+          messaggio: "Questo è un messaggio di prova da EmailJS."
+        },
+        "QI5iw080SMexWj7VE"     // ✅ PUBLIC KEY
+      ).then(function () {
 
-  <!-- CHI SONO -->
-  <section class="about">
-    <img src="daniele.jpg" alt="Daniele Zarlenga">
+        resultBox.innerHTML =
+          "<strong>TEST RIUSCITO.</strong><br>L’email è stata inviata correttamente.";
+        resultBox.style.color = "#8fbfc5";
 
-    <h3>Chi sono</h3>
+      }, function (error) {
 
-    <p>
-      Lavoro con imprenditori e proprietari di immobili commerciali che vogliono
-      vendere o locare in modo serio, senza affidarsi a promesse irrealistiche.
-    </p>
+        resultBox.innerHTML =
+          "<strong>ERRORE.</strong><br>" + JSON.stringify(error);
+        resultBox.style.color = "#ff6b6b";
 
-    <p>
-      Ho visto troppe operazioni partire male:
-      prezzo deciso “a sensazione”, annunci copiati, mesi persi senza risultati.
-      Per questo oggi il mio lavoro è consulenziale prima che commerciale:
-      analisi, strategia, posizionamento e solo dopo numeri.
-    </p>
+        console.error("EmailJS error:", error);
+      });
+    }
+  </script>
 
-    <p>
-      Il mio obiettivo non è promettere tempi impossibili,
-      ma aiutarti a prendere decisioni lucide che tutelino davvero il valore del tuo immobile.
-    </p>
-  </section>
-
-  <!-- IMMAGINE DI SUPPORTO -->
-  <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
-
-  <!-- FORM CONTATTI -->
-  <section id="contatti" class="form-box">
-    <h3>Parliamo del tuo immobile</h3>
-
-    <!-- FORM SENZA MAILTO -->
-    <form id="contactForm">
-
-      <input type="text" name="nome" placeholder="Il tuo nome" required>
-      <input type="email" name="email" placeholder="La tua email" required>
-      <input type="tel" name="telefono" placeholder="Il tuo telefono" required>
-
-      <strong>Di cosa hai bisogno?</strong>
-
-      <div class="choice-buttons">
-        <button type="button" class="choice-btn" data-value="Devo vendere">Devo vendere</button>
-        <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
-      </div>
-
-      <!-- CAMPO NASCOSTO -->
-      <input type="hidden" name="azione" id="richiesta" required>
-
-      <textarea
-        name="messaggio"
-        rows="4"
-        placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)">
-      </textarea>
-
-      <button type="submit">Invia richiesta</button>
-    </form>
-
-    <div id="formMessage" class="message-box"></div>
-  </section>
-
-  <!-- IMMAGINE FINALE -->
-  <img src="spazio-interno.jpg" alt="Spazio commerciale interno" class="section-image">
-
-  <footer>
-    © 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
-  </footer>
-
-</div>
-
-<!-- ================= SCRIPT BOTTONI ================= -->
-<script>
-  const buttons = document.querySelectorAll('.choice-btn');
-  const hiddenInput = document.getElementById('richiesta');
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      hiddenInput.value = btn.dataset.value;
-    });
-  });
-</script>
-
-<!-- ================= SCRIPT INVIO EMAIL ================= -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  const form = document.getElementById("contactForm");
-  if (!form) return;
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.send(
-      "service_rx3qo91",
-      "template_e7tleok",
-      {
-        nome: "TEST",
-        email: "test@test.it",
-        telefono: "000",
-        azione: "Test",
-        messaggio: "Messaggio di prova"
-      },
-      "Ql5iw080SMexWj7VE"
-    ).then(function() {
-
-      alert("TEST OK: EmailJS funziona");
-
-    }, function(error) {
-
-      alert("TEST FALLITO: " + JSON.stringify(error));
-      console.error("EmailJS error:", error);
-
-    });
-  });
-
-});
-</script>
 </body>
 </html>
