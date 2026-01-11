@@ -11,7 +11,7 @@
       font-family: Arial, sans-serif;
       background: #0b2f33;
       color: #ffffff;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     /* HEADER */
@@ -19,109 +19,118 @@
       position: sticky;
       top: 0;
       background: #062125;
-      padding: 10px 16px;
+      padding: 14px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      flex-wrap: wrap;
     }
 
     header .logo {
-      max-width: 80px;
-    }
-
-    header .contacts {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
+      max-width: 130px;
     }
 
     header .contacts a {
       color: #8fbfc5;
       text-decoration: none;
       font-weight: bold;
-      font-size: 13px;
-      background: rgba(255,255,255,0.08);
-      padding: 6px 10px;
-      border-radius: 4px;
+      margin-left: 15px;
+      font-size: 14px;
     }
 
     /* CONTAINER */
     .container {
       max-width: 900px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 50px 20px 80px;
       text-align: center;
+    }
+
+    section {
+      margin-bottom: 70px;
     }
 
     /* HERO */
     .hero h1 {
-      font-size: 34px;
-      margin-bottom: 10px;
+      font-size: 36px;
+      margin-bottom: 14px;
     }
 
     .hero h2 {
       font-size: 18px;
       font-weight: normal;
       color: #cfd8dc;
-      margin-bottom: 10px;
     }
 
-    /* SEZIONE CHI SONO */
+    /* CHI SONO */
     .about {
-      margin: 60px 0;
-      text-align: left;
       background: rgba(255,255,255,0.06);
-      padding: 30px;
+      padding: 40px 30px;
       border-radius: 6px;
+      text-align: left;
     }
 
     .about img {
-      width: 140px;
-      height: 140px;
+      width: 160px;
+      height: 160px;
       object-fit: cover;
       border-radius: 50%;
       border: 3px solid #8fbfc5;
       display: block;
-      margin: 0 auto 20px;
+      margin: 0 auto 25px;
     }
 
     .about h3 {
       text-align: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .about p {
       color: #e0f2f1;
       font-size: 16px;
-      margin-bottom: 15px;
+      margin-bottom: 18px;
+    }
+
+    /* IMMAGINE LATERALE */
+    .side-image {
+      max-width: 280px;
+      margin: 0 auto 40px;
+      display: block;
+      border-radius: 8px;
+      opacity: 0.85;
     }
 
     /* FORM */
     .form-box {
       background: rgba(255,255,255,0.06);
-      padding: 25px;
+      padding: 35px 30px;
       border-radius: 6px;
-      margin: 60px 0;
       text-align: left;
     }
 
     .form-box h3 {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
     }
 
     .form-box input,
-    .form-box textarea,
-    .form-box select {
+    .form-box textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 12px;
+      padding: 12px;
+      margin-bottom: 14px;
       border-radius: 4px;
       border: none;
       font-size: 14px;
+    }
+
+    .form-choice {
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .form-choice label {
+      margin-right: 25px;
+      cursor: pointer;
     }
 
     .form-box button {
@@ -129,27 +138,42 @@
       background: #8fbfc5;
       color: #0b2f33;
       border: none;
-      padding: 14px;
+      padding: 15px;
       border-radius: 4px;
       font-weight: bold;
       cursor: pointer;
     }
 
-    /* IMMAGINI */
+    /* IMMAGINE SUPPORTO */
     .section-image {
       width: 100%;
-      max-width: 650px;
-      margin: 40px auto;
+      max-width: 600px;
+      margin: 50px auto;
       display: block;
       border-radius: 8px;
+      opacity: 0.9;
     }
 
-    /* FOOTER */
     footer {
-      margin-top: 60px;
+      margin-top: 70px;
       font-size: 14px;
       color: #b0bec5;
       text-align: center;
+    }
+
+    /* DESKTOP */
+    @media (min-width: 900px) {
+      .image-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        text-align: left;
+      }
+
+      .image-row img {
+        margin: 0;
+      }
     }
   </style>
 </head>
@@ -158,12 +182,9 @@
 
 <header>
   <img src="logo-dz.png" alt="Logo" class="logo">
-
   <div class="contacts">
     <a href="mailto:contatti@danielezarlenga.it">Email</a>
     <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
-    <a href="#contatti">Devo vendere</a>
-    <a href="#contatti">Devo affittare</a>
   </div>
 </header>
 
@@ -199,8 +220,8 @@
     </p>
   </section>
 
-  <!-- IMMAGINE CONTESTO -->
-  <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="section-image">
+  <!-- IMMAGINE DI SUPPORTO -->
+  <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
 
   <!-- FORM CONTATTI -->
   <section id="contatti" class="form-box">
@@ -211,10 +232,20 @@
       <input type="email" name="Email" placeholder="La tua email" required>
       <input type="tel" name="Telefono" placeholder="Il tuo telefono" required>
 
-      <select name="Richiesta">
-        <option>Devo vendere</option>
-        <option>Devo affittare</option>
-      </select>
+      <!-- SCELTA CON FLAG -->
+      <div class="form-choice">
+        <strong>Di cosa hai bisogno?</strong><br><br>
+
+        <label>
+          <input type="radio" name="Richiesta" value="Devo vendere" required>
+          Devo vendere
+        </label>
+
+        <label>
+          <input type="radio" name="Richiesta" value="Devo affittare">
+          Devo affittare
+        </label>
+      </div>
 
       <textarea name="Messaggio" rows="4">
 Ho un locale da vendere/affittare e vorrei essere contattato.
@@ -224,7 +255,7 @@ Ho un locale da vendere/affittare e vorrei essere contattato.
     </form>
   </section>
 
-  <!-- IMMAGINE SUPPORTO -->
+  <!-- IMMAGINE FINALE -->
   <img src="spazio-interno.jpg" alt="Spazio commerciale interno" class="section-image">
 
   <footer>
