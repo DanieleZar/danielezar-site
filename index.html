@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* RESET BASE */
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -15,13 +14,9 @@
       color: #ffffff;
       line-height: 1.6;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
+    img { max-width: 100%; height: auto; display: block; }
 
-    /* HEADER */
+    /* ===== HEADER ===== */
     header {
       position: sticky;
       top: 0;
@@ -31,17 +26,10 @@
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
-      flex-wrap: wrap;
-      gap: 10px;
     }
-    .logo { max-width: 120px; }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-    .contacts a {
+    .header-left .logo { max-width: 120px; }
+    .header-right { display: flex; align-items: center; gap: 16px; }
+    .header-right a {
       color: #8fbfc5;
       text-decoration: none;
       font-weight: bold;
@@ -49,7 +37,7 @@
     }
     .btn-vcard {
       background: #ffffff;
-      color: #0b2f33;
+      color: #0b2f33 !important;
       padding: 8px 14px;
       border-radius: 6px;
       font-size: 13px;
@@ -59,7 +47,7 @@
       white-space: nowrap;
     }
 
-    /* LAYOUT */
+    /* ===== LAYOUT ===== */
     .container {
       max-width: 900px;
       margin: 0 auto;
@@ -68,11 +56,9 @@
     }
     section { margin-bottom: 55px; }
 
-    /* HERO */
     .hero h1 { font-size: 34px; margin-bottom: 10px; }
     .hero h2 { font-size: 18px; font-weight: normal; color: #cfd8dc; }
 
-    /* ABOUT */
     .about {
       background: rgba(255,255,255,0.06);
       padding: 32px 26px;
@@ -80,26 +66,19 @@
       text-align: left;
     }
     .about img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #8fbfc5;
+      width: 120px; height: 120px; object-fit: cover;
+      border-radius: 50%; border: 3px solid #8fbfc5;
       margin: 0 auto 20px;
     }
     .about h3 { text-align: center; margin-bottom: 18px; }
     .about p { color: #e0f2f1; font-size: 15px; margin-bottom: 14px; }
 
-    /* IMMAGINE IMMOBILE */
     .side-image {
-      width: 220px;
-      max-width: 90%;
+      width: 220px; max-width: 90%;
       margin: 0 auto 30px;
-      border-radius: 8px;
-      opacity: 0.85;
+      border-radius: 8px; opacity: 0.85;
     }
 
-    /* FORM */
     .form-box {
       background: rgba(255,255,255,0.06);
       padding: 32px 26px;
@@ -109,48 +88,47 @@
     .form-box h3 { text-align: center; margin-bottom: 22px; }
     .form-box input,
     .form-box textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 14px;
-      border-radius: 4px;
-      border: none;
-      font-size: 14px;
+      width: 100%; padding: 12px; margin-bottom: 14px;
+      border-radius: 4px; border: none; font-size: 14px;
     }
 
-    .choice-buttons {
-      display: flex;
-      gap: 12px;
-      margin: 14px 0 20px;
-    }
+    .choice-buttons { display: flex; gap: 12px; margin: 14px 0 20px; }
     .choice-btn {
-      flex: 1;
-      padding: 12px;
-      background: transparent;
-      border: 2px solid #8fbfc5;
-      color: #8fbfc5;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-      text-align: center;
+      flex: 1; padding: 12px; background: transparent;
+      border: 2px solid #8fbfc5; color: #8fbfc5;
+      border-radius: 4px; font-weight: bold; cursor: pointer; text-align: center;
     }
     .choice-btn.active { background: #8fbfc5; color: #0b2f33; }
 
     .form-box button[type="submit"] {
-      width: 100%;
-      background: #8fbfc5;
-      color: #0b2f33;
-      border: none;
-      padding: 15px;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
+      width: 100%; background: #8fbfc5; color: #0b2f33;
+      border: none; padding: 15px; border-radius: 4px;
+      font-weight: bold; cursor: pointer;
     }
 
-    footer {
-      margin-top: 60px;
-      font-size: 14px;
-      color: #b0bec5;
-      text-align: center;
+    footer { margin-top: 60px; font-size: 14px; color: #b0bec5; text-align: center; }
+
+    /* ===== POPUP ===== */
+    .popup-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+      display: none; justify-content: center; align-items: center;
+      z-index: 99999;
+    }
+    .popup-box {
+      position: relative; background: #062125; border: 2px solid #8fbfc5;
+      padding: 28px 26px 24px; border-radius: 10px;
+      max-width: 420px; width: 90%; text-align: center; color: #ffffff;
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+      animation: popupIn .25s ease-out;
+    }
+    @keyframes popupIn { from { transform: scale(.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .popup-x {
+      position: absolute; top: 8px; right: 10px;
+      font-size: 20px; color: #8fbfc5; cursor: pointer;
+    }
+    .popup-close-btn {
+      background: #8fbfc5; color: #0b2f33; border: none;
+      padding: 10px 18px; border-radius: 4px; font-weight: bold; cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -158,70 +136,25 @@
       .about { padding: 26px 22px; }
       .form-box { padding: 26px 22px; }
     }
-
-    /* ================= POPUP CONFERMA ================= */
-    .popup-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      display: none;              /* verrà mostrato via JS */
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    .popup-box {
-      background: #062125;
-      border: 1px solid #8fbfc5;
-      padding: 28px 26px;
-      border-radius: 8px;
-      max-width: 420px;
-      width: 90%;
-      text-align: center;
-      color: #ffffff;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-    .popup-box h4 {
-      margin-top: 0;
-      color: #8fbfc5;
-    }
-    .popup-box p {
-      font-size: 15px;
-      line-height: 1.6;
-      margin: 15px 0 22px;
-    }
-    .popup-close {
-      background: #8fbfc5;
-      color: #0b2f33;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <img src="logo-dz.png" alt="Logo" class="logo">
-
+  <div class="header-left">
+    <img src="logo-dz.png" alt="Logo" class="logo">
+  </div>
   <div class="header-right">
-    <div class="contacts">
-      <a href="mailto:contatti@danielezarlenga.it">Email</a>
-      <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
-    </div>
-
-    <a href="https://linktr.ee/Danieleconsulenteimmobiliare"
-       target="_blank"
-       class="btn-vcard">
-       Biglietto da visita
+    <a href="mailto:contatti@danielezarlenga.it">Email</a>
+    <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
+    <a href="https://linktr.ee/Danieleconsulenteimmobiliare" target="_blank" class="btn-vcard">
+      Biglietto da visita
     </a>
   </div>
 </header>
 
 <div class="container">
-
   <section class="hero">
     <h1>Daniele Zarlenga</h1>
     <h2>Consulente immobiliare per immobili commerciali</h2>
@@ -230,17 +163,9 @@
   <section class="about">
     <img src="daniele.jpg" alt="Daniele Zarlenga">
     <h3>Chi sono</h3>
-    <p>
-      Lavoro con imprenditori e proprietari di immobili commerciali che vogliono
-      vendere o locare in modo serio, senza promesse irrealistiche.
-    </p>
-    <p>
-      Il mio approccio è consulenziale: analisi, strategia e posizionamento prima dei numeri.
-    </p>
-    <p>
-      L’obiettivo non è promettere tempi impossibili, ma decisioni lucide che tutelino
-      il valore dell’immobile.
-    </p>
+    <p>Lavoro con imprenditori e proprietari di immobili commerciali che vogliono vendere o locare in modo serio.</p>
+    <p>Il mio approccio è consulenziale: analisi, strategia e posizionamento prima dei numeri.</p>
+    <p>L’obiettivo non è promettere tempi impossibili, ma decisioni lucide che tutelino il valore dell’immobile.</p>
   </section>
 
   <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
@@ -259,7 +184,6 @@
       <input type="tel" name="telefono" placeholder="Il tuo telefono" required>
 
       <strong>Di cosa hai bisogno?</strong>
-
       <div class="choice-buttons">
         <button type="button" class="choice-btn" data-value="Devo vendere">Devo vendere</button>
         <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
@@ -268,8 +192,7 @@
       <input type="hidden" name="azione" id="azione">
 
       <textarea id="messaggio" name="messaggio" rows="4"
-        placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)">
-      </textarea>
+        placeholder="Scrivimi due righe sul tuo immobile"></textarea>
 
       <button type="submit">Invia richiesta</button>
     </form>
@@ -278,24 +201,25 @@
   <footer>
     © 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
   </footer>
-
 </div>
 
-<!-- POPUP CONFERMA -->
+<!-- AUDIO (suono discreto) -->
+<audio id="notifySound" preload="auto">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" type="audio/mpeg">
+</audio>
+
+<!-- POPUP -->
 <div id="popupOverlay" class="popup-overlay">
   <div class="popup-box">
+    <span class="popup-x" onclick="closePopup()">×</span>
     <h4>Richiesta inviata</h4>
-    <p>
-      Grazie per avermi contattato.  
-      La tua richiesta è stata ricevuta correttamente e ti risponderò
-      personalmente nel più breve tempo possibile.
-    </p>
-    <button class="popup-close" onclick="closePopup()">Chiudi</button>
+    <p>Grazie per avermi contattato. Ti risponderò personalmente nel più breve tempo possibile.</p>
+    <button class="popup-close-btn" onclick="closePopup()">Chiudi</button>
   </div>
 </div>
 
 <script>
-  // Gestione pulsanti e messaggio precompilato
+  // Pulsanti scelta + testo automatico
   const buttons = document.querySelectorAll('.choice-btn');
   const hiddenInput = document.getElementById('azione');
   const messageBox = document.getElementById('messaggio');
@@ -314,11 +238,18 @@
     });
   });
 
-  // Popup di conferma dopo invio (usa ?inviato=ok)
+  // Popup + suono dopo invio
   const params = new URLSearchParams(window.location.search);
   if (params.get("inviato") === "ok") {
     const overlay = document.getElementById("popupOverlay");
+    const sound = document.getElementById("notifySound");
+
     overlay.style.display = "flex";
+
+    // Riproduce il suono se il browser lo consente
+    if (sound) {
+      sound.play().catch(() => {});
+    }
   }
 
   function closePopup() {
