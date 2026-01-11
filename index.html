@@ -301,42 +301,35 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   const form = document.getElementById("contactForm");
-  const msgBox = document.getElementById("formMessage");
-
-  if (!form) {
-    console.error("Form #contactForm non trovato");
-    return;
-  }
+  if (!form) return;
 
   form.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    msgBox.style.display = "block";
-    msgBox.style.color = "#e0f2f1";
-    msgBox.innerHTML = "Invio in corso...";
-
-    emailjs.sendForm(
+    emailjs.send(
       "service_rx3qo91",
       "template_e7tleok",
-      this,
-      "Ql5iw080SMexWj7VE"
+      {
+        nome: "TEST",
+        email: "test@test.it",
+        telefono: "000",
+        azione: "Test",
+        messaggio: "Messaggio di prova"
+      },
+      "INSERISCI_QUI_LA_TUA_PUBLIC_KEY"
     ).then(function() {
 
-        msgBox.innerHTML = "<strong>Richiesta inviata con successo.</strong><br>Ti contatterò personalmente il prima possibile.";
-        msgBox.style.color = "#8fbfc5";
-        form.reset();
+      alert("TEST OK: EmailJS funziona");
 
     }, function(error) {
 
-        msgBox.innerHTML = "<strong>Errore nell’invio.</strong><br>Se il problema persiste, contattami direttamente a contatti@danielezarlenga.it.";
-        msgBox.style.color = "#ff8a80";
-        console.error("EmailJS error:", error);
+      alert("TEST FALLITO: " + JSON.stringify(error));
+      console.error("EmailJS error:", error);
 
     });
   });
 
 });
 </script>
-
 </body>
 </html>
