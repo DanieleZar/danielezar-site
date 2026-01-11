@@ -2,93 +2,296 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Test EmailJS – Daniele Zarlenga</title>
+  <title>Daniele Zarlenga – Consulenza Immobiliare Commerciale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- EMAILJS -->
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     (function(){
-      emailjs.init("QI5iw080SMexWj7VE");   // ✅ TUA PUBLIC KEY
+      emailjs.init("QI5iw080SMexWj7VE"); // PUBLIC KEY CORRETTA
     })();
   </script>
 
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background: #0b2f33;
-      color: #fff;
-      padding: 40px;
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #062125;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header .logo {
+      max-width: 120px;
+    }
+
+    header .contacts a {
+      color: #8fbfc5;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
       text-align: center;
     }
-    .box {
-      max-width: 500px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.08);
-      padding: 30px;
-      border-radius: 8px;
+
+    section {
+      margin-bottom: 70px;
     }
-    button {
-      padding: 15px 25px;
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .hero h2 {
+      font-size: 18px;
+      font-weight: normal;
+      color: #cfd8dc;
+    }
+
+    .about {
+      background: rgba(255,255,255,0.06);
+      padding: 40px 30px;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    .about img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #8fbfc5;
+      display: block;
+      margin: 0 auto 25px;
+    }
+
+    .about h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #e0f2f1;
       font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .side-image {
+      max-width: 280px;
+      margin: 0 auto 40px;
+      display: block;
+      border-radius: 8px;
+      opacity: 0.85;
+    }
+
+    .form-box {
+      background: rgba(255,255,255,0.06);
+      padding: 35px 30px;
+      border-radius: 6px;
+      text-align: left;
+    }
+
+    .form-box h3 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .form-box input,
+    .form-box textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 14px;
+      border-radius: 4px;
+      border: none;
+      font-size: 14px;
+    }
+
+    .choice-buttons {
+      display: flex;
+      gap: 12px;
+      margin: 14px 0 20px;
+    }
+
+    .choice-btn {
+      flex: 1;
+      padding: 12px;
+      background: transparent;
+      border: 2px solid #8fbfc5;
+      color: #8fbfc5;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .choice-btn.active {
+      background: #8fbfc5;
+      color: #0b2f33;
+    }
+
+    .form-box button[type="submit"] {
+      width: 100%;
       background: #8fbfc5;
       color: #0b2f33;
       border: none;
+      padding: 15px;
       border-radius: 4px;
-      cursor: pointer;
       font-weight: bold;
+      cursor: pointer;
     }
-    #result {
-      margin-top: 20px;
-      font-size: 15px;
+
+    #formMessage {
+      margin-top: 15px;
+      font-size: 14px;
+      display: none;
+    }
+
+    footer {
+      margin-top: 70px;
+      font-size: 14px;
+      color: #b0bec5;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="box">
-    <h2>TEST EMAILJS</h2>
-    <p>Clicca il bottone per inviare una mail di prova.</p>
-
-    <button onclick="testEmailJS()">INVIA TEST</button>
-
-    <div id="result"></div>
+<header>
+  <img src="logo-dz.png" alt="Logo" class="logo">
+  <div class="contacts">
+    <a href="mailto:contatti@danielezarlenga.it">Email</a>
+    <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
   </div>
+</header>
 
-  <script>
-    function testEmailJS() {
-      const resultBox = document.getElementById("result");
-      resultBox.innerHTML = "Invio in corso...";
-      resultBox.style.color = "#fff";
+<div class="container">
 
-      emailjs.send(
-        "service_rx3qo91",      // ✅ SERVICE ID
-        "template_e7tleok",    // ✅ TEMPLATE ID
-        {
-          nome: "TEST",
-          email: "test@test.it",
-          telefono: "000",
-          azione: "Test automatico",
-          messaggio: "Questo è un messaggio di prova da EmailJS."
-        },
-        "QI5iw080SMexWj7VE"     // ✅ PUBLIC KEY
-      ).then(function () {
+  <section class="hero">
+    <h1>Daniele Zarlenga</h1>
+    <h2>Consulente immobiliare per immobili commerciali</h2>
+  </section>
 
-        resultBox.innerHTML =
-          "<strong>TEST RIUSCITO.</strong><br>L’email è stata inviata correttamente.";
-        resultBox.style.color = "#8fbfc5";
+  <section class="about">
+    <img src="daniele.jpg" alt="Daniele Zarlenga">
+    <h3>Chi sono</h3>
+    <p>
+      Lavoro con imprenditori e proprietari di immobili commerciali che vogliono
+      vendere o locare in modo serio, senza promesse irrealistiche.
+    </p>
+    <p>
+      Il mio approccio è consulenziale: analisi, strategia e posizionamento prima dei numeri.
+    </p>
+    <p>
+      L’obiettivo non è promettere tempi impossibili, ma decisioni lucide che tutelino
+      il valore dell’immobile.
+    </p>
+  </section>
 
-      }, function (error) {
+  <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
 
-        resultBox.innerHTML =
-          "<strong>ERRORE.</strong><br>" + JSON.stringify(error);
-        resultBox.style.color = "#ff6b6b";
+  <section id="contatti" class="form-box">
+    <h3>Parliamo del tuo immobile</h3>
 
-        console.error("EmailJS error:", error);
-      });
-    }
-  </script>
+    <form id="contactForm">
+
+      <input type="text" name="nome" placeholder="Il tuo nome" required>
+      <input type="email" name="email" placeholder="La tua email" required>
+      <input type="tel" name="telefono" placeholder="Il tuo telefono" required>
+
+      <strong>Di cosa hai bisogno?</strong>
+
+      <div class="choice-buttons">
+        <button type="button" class="choice-btn" data-value="Devo vendere">Devo vendere</button>
+        <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
+      </div>
+
+      <input type="hidden" name="azione" id="azione" required>
+
+      <textarea name="messaggio" rows="4"
+        placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)">
+      </textarea>
+
+      <button type="submit">Invia richiesta</button>
+    </form>
+
+    <div id="formMessage"></div>
+  </section>
+
+  <footer>
+    © 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
+  </footer>
+
+</div>
+
+<script>
+  // gestione pulsanti scelta
+  const buttons = document.querySelectorAll('.choice-btn');
+  const hiddenInput = document.getElementById('azione');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      hiddenInput.value = btn.dataset.value;
+    });
+  });
+
+  // invio form con EmailJS
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const msgBox = document.getElementById("formMessage");
+    msgBox.style.display = "block";
+    msgBox.style.color = "#cfd8dc";
+    msgBox.innerHTML = "Invio in corso...";
+
+    emailjs.sendForm(
+      "service_rx3qo91",      // SERVICE ID CORRETTO
+      "template_e7tleok",    // TEMPLATE ID
+      this
+    ).then(function() {
+
+      msgBox.innerHTML =
+        "<strong>Richiesta inviata con successo.</strong><br>" +
+        "Ti contatterò personalmente il prima possibile.";
+      msgBox.style.color = "#8fbfc5";
+
+      document.getElementById("contactForm").reset();
+      buttons.forEach(b => b.classList.remove('active'));
+      hiddenInput.value = "";
+
+    }, function(error) {
+
+      msgBox.innerHTML =
+        "<strong>Errore nell’invio.</strong><br>" +
+        "Se il problema persiste, scrivimi a " +
+        "<a href='mailto:contatti@danielezarlenga.it'>contatti@danielezarlenga.it</a>.";
+      msgBox.style.color = "#ff6b6b";
+
+      console.error("EmailJS error:", error);
+    });
+  });
+</script>
 
 </body>
 </html>
