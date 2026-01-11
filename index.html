@@ -1,366 +1,151 @@
-<!DOCTYPE html>
+[11:52, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Daniele Zarlenga – Consulenza Immobiliare Commerciale</title>
+  <title>Contatti – Daniele Zarlenga</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("INSERISCI_QUI_LA_TUA_PUBLIC_KEY");
+    })();
+  </script>
 
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: #0b2f33;
-      color: #ffffff;
-      line-height: 1.7;
+      background: #f6f7f8;
+      padding: 20px;
     }
-
-    /* HEADER */
-    header {
-      position: sticky;
-      top: 0;
-      background: #062125;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    header .logo {
-      max-width: 130px;
-    }
-
-    header .contacts a {
-      color: #8fbfc5;
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 15px;
-      font-size: 14px;
-    }
-
-    /* CONTAINER */
-    .container {
-      max-width: 900px;
+    .form-wrapper {
+      max-width: 520px;
       margin: 0 auto;
-      padding: 50px 20px 80px;
-      text-align: center;
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-
-    section {
-      margin-bottom: 70px;
-    }
-
-    /* HERO */
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 14px;
-    }
-
-    .hero h2 {
-      font-size: 18px;
-      font-weight: normal;
-      color: #cfd8dc;
-    }
-
-    /* CHI SONO */
-    .about {
-      background: rgba(255,255,255,0.06);
-      padding: 40px 30px;
-      border-radius: 6px;
-      text-align: left;
-    }
-
-    .about img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid #8fbfc5;
-      display: block;
-      margin: 0 auto 25px;
-    }
-
-    .about h3 {
-      text-align: center;
+    h2 {
       margin-bottom: 20px;
     }
+    input, select, textarea …
+[11:54, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Contatti – Daniele Zarlenga</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .about p {
-      color: #e0f2f1;
-      font-size: 16px;
-      margin-bottom: 18px;
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("INSERISCI_QUI_LA_TUA_PUBLIC_KEY");
+    })();
+  </script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7f8;
+      padding: 20px;
     }
-
-    /* IMMAGINE LATERALE */
-    .side-image {
-      max-width: 280px;
-      margin: 0 auto 40px;
-      display: block;
+    .form-wrapper {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px;
       border-radius: 8px;
-      opacity: 0.85;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
-
-    /* FORM */
-    .form-box {
-      background: rgba(255,255,255,0.06);
-      padding: 35px 30px;
-      border-radius: 6px;
-      text-align: left;
-      position: relative;
+    h2 {
+      margin-bottom: 20px;
     }
-
-    .form-box h3 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    .form-box input,
-    .form-box textarea {
+    input, select, textarea {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 14px;
+      padding: 10px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
       border-radius: 4px;
-      border: none;
       font-size: 14px;
     }
-
-    /* BOTTONI SCELTA */
-    .choice-buttons {
-      display: flex;
-      gap: 12px;
-      margin: 14px 0 20px;
-    }
-
-    .choice-btn {
-      flex: 1;
-      padding: 12px;
-      background: transparent;
-      border: 2px solid #8fbfc5;
-      color: #8fbfc5;
-      border-radius: 4px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .choice-btn.active {
-      background: #8fbfc5;
-      color: #0b2f33;
-    }
-
-    .form-box button[type="submit"] {
+    button {
       width: 100%;
-      background: #8fbfc5;
-      color: #0b2f33;
+      padding: 12px;
+      background: #1f3d2b;
+      color: #fff;
       border: none;
-      padding: 15px;
       border-radius: 4px;
-      font-weight: bold;
+      font-size: 16px;
       cursor: pointer;
     }
-
-    /* MESSAGGIO ELEGANTE INLINE */
-    .form-message {
-      display: none;
+    button:hover {
+      background: #173023;
+    }
+    #formMessage {
       margin-top: 15px;
-      padding: 14px;
-      border-radius: 4px;
-      background: rgba(143,191,197,0.15);
-      color: #e0f2f1;
       font-size: 14px;
-      text-align: center;
-    }
-
-    .form-message.error {
-      background: rgba(255, 120, 120, 0.15);
-      color: #ffdada;
-    }
-
-    /* SCHERMATA CONFERMA */
-    .confirmation-screen {
-      display: none;
-      background: rgba(6,33,37,0.95);
-      position: absolute;
-      inset: 0;
-      border-radius: 6px;
-      padding: 40px 25px;
-      text-align: center;
-    }
-
-    .confirmation-screen h4 {
-      margin-bottom: 15px;
-      color: #8fbfc5;
-      font-size: 22px;
-    }
-
-    .confirmation-screen p {
-      font-size: 16px;
-      color: #e0f2f1;
-    }
-
-    /* IMMAGINE SUPPORTO */
-    .section-image {
-      width: 100%;
-      max-width: 600px;
-      margin: 50px auto;
-      display: block;
-      border-radius: 8px;
-      opacity: 0.9;
-    }
-
-    footer {
-      margin-top: 70px;
-      font-size: 14px;
-      color: #b0bec5;
-      text-align: center;
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <img src="logo-dz.png" alt="Logo" class="logo">
-  <div class="contacts">
-    <a href="mailto:contatti@danielezarlenga.it">Email</a>
-    <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
-  </div>
-</header>
+  <div class="form-wrapper">
+    <h2>Richiedi informazioni</h2>
 
-<div class="container">
+    <form id="contactForm">
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Daniele Zarlenga</h1>
-    <h2>Consulente immobiliare per immobili commerciali</h2>
-  </section>
+      <input type="text" name="nome" placeholder="Nome e cognome" required>
 
-  <!-- CHI SONO -->
-  <section class="about">
-    <img src="daniele.jpg" alt="Daniele Zarlenga">
-    <h3>Chi sono</h3>
-    <p>
-      Lavoro con imprenditori e proprietari di immobili commerciali che vogliono
-      vendere o locare in modo serio, senza affidarsi a promesse irrealistiche.
-    </p>
-    <p>
-      Ho visto troppe operazioni partire male:
-      prezzo deciso “a sensazione”, annunci copiati, mesi persi senza risultati.
-      Per questo oggi il mio lavoro è consulenziale prima che commerciale:
-      analisi, strategia, posizionamento e solo dopo numeri.
-    </p>
-    <p>
-      Il mio obiettivo non è promettere tempi impossibili,
-      ma aiutarti a prendere decisioni lucide che tutelino davvero il valore del tuo immobile.
-    </p>
-  </section>
+      <input type="email" name="email" placeholder="Email" required>
 
-  <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
+      <input type="tel" name="telefono" placeholder="Telefono">
 
-  <!-- FORM CONTATTI -->
-  <section id="contatti" class="form-box">
-    <h3>Parliamo del tuo immobile</h3>
+      <select name="azione" required>
+        <option value="">Seleziona la richiesta</option>
+        <option value="Vendere">Voglio vendere</option>
+        <option value="Affittare">Voglio affittare</option>
+      </select>
 
-    <form id="contactForm" action="mailto:contatti@danielezarlenga.it" method="post" enctype="text/plain">
-
-      <input type="text" name="Nome" placeholder="Il tuo nome" required>
-      <input type="email" name="Email" placeholder="La tua email" required>
-      <input type="tel" name="Telefono" placeholder="Il tuo telefono" required>
-
-      <strong>Di cosa hai bisogno?</strong>
-
-      <div class="choice-buttons">
-        <button type="button" class="choice-btn" data-value="Devo vendere">Devo vendere</button>
-        <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
-      </div>
-
-      <input type="hidden" name="Richiesta" id="richiesta">
-
-      <textarea
-        name="Messaggio"
-        rows="4"
-        placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)">
-      </textarea>
+      <textarea name="messaggio" placeholder="Scrivi qui il tuo messaggio"></textarea>
 
       <button type="submit">Invia richiesta</button>
-
-      <!-- MESSAGGIO INLINE -->
-      <div class="form-message" id="formMessage"></div>
     </form>
 
-    <!-- SCHERMATA DI CONFERMA -->
-    <div class="confirmation-screen" id="confirmationScreen">
-      <h4>Richiesta inviata</h4>
-      <p id="confirmationText"></p>
-    </div>
-  </section>
+    <div id="formMessage" style="display:none;"></div>
+  </div>
 
-  <img src="spazio-interno.jpg" alt="Spazio commerciale interno" class="section-image">
-
-  <footer>
-    © 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
-  </footer>
-
-</div>
-
-<script>
-  const buttons = document.querySelectorAll('.choice-btn');
-  const hiddenInput = document.getElementById('richiesta');
-  const form = document.getElementById('contactForm');
-  const messageBox = document.getElementById('formMessage');
-  const confirmationScreen = document.getElementById('confirmationScreen');
-  const confirmationText = document.getElementById('confirmationText');
-
-  // Gestione scelta
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      hiddenInput.value = btn.dataset.value;
-
-      messageBox.style.display = 'none';
-      messageBox.classList.remove('error');
-    });
-  });
-
-  // Gestione invio
-  form.addEventListener('submit', function (e) {
-
-    if (!hiddenInput.value) {
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
       e.preventDefault();
-      messageBox.textContent = 'Seleziona prima se vuoi vendere o affittare il tuo immobile.';
-      messageBox.classList.add('error');
-      messageBox.style.display = 'block';
-      return;
-    }
 
-    // Messaggio elegante inline
-    let testoInline = '';
-    let testoConferma = '';
+      const msgBox = document.getElementById("formMessage");
+      msgBox.style.display = "block";
+      msgBox.style.color = "#333";
+      msgBox.innerHTML = "Invio in corso...";
 
-    if (hiddenInput.value === 'Devo vendere') {
-      testoInline = 'Grazie. La tua richiesta per la vendita è stata registrata.';
-      testoConferma = 'Ti contatterò personalmente a breve per valutare insieme la strategia migliore per la vendita del tuo immobile.';
-    }
+      emailjs.sendForm(
+        "service_rx3qo91",     // Service ID
+        "template_e7tleok",   // Template ID
+        this
+      ).then(function() {
 
-    if (hiddenInput.value === 'Devo affittare') {
-      testoInline = 'Grazie. La tua richiesta per la locazione è stata registrata.';
-      testoConferma = 'Ti contatterò personalmente a breve per valutare insieme la strategia migliore per la locazione del tuo immobile.';
-    }
+          msgBox.innerHTML = "<strong>Richiesta inviata con successo.</strong><br>Ti contatterò personalmente il prima possibile.";
+          msgBox.style.color = "#1f3d2b";
 
-    // Mostra messaggio inline
-    messageBox.textContent = testoInline;
-    messageBox.classList.remove('error');
-    messageBox.style.display = 'block';
+          document.getElementById("contactForm").reset();
 
-    // Mostra schermata di conferma dopo un breve delay
-    e.preventDefault();
-    setTimeout(() => {
-      form.style.display = 'none';
-      confirmationText.textContent = testoConferma;
-      confirmationScreen.style.display = 'block';
-    }, 800);
-  });
-</script>
+      }, function(error) {
+
+          msgBox.innerHTML = "<strong>Errore nell’invio.</strong><br>Se il problema persiste, contattami direttamente a contatti@danielezarlenga.it.";
+          msgBox.style.color = "#a00000";
+
+          console.error("EmailJS error:", error);
+      });
+    });
+  </script>
 
 </body>
 </html>
