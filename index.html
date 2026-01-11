@@ -1,4 +1,41 @@
-<!DOCTYPE html>
+[15:18, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Daniele Zarlenga – Consulenza Immobiliare Commerciale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b2f33;
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #062125;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header .logo {
+      max-width: 120px;
+    }
+
+    header .contacts a {
+      color: #8fbfc5;
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 15px;
+      fo…
+[15:20, 11/01/2026] Daniele Zarlenga: <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
@@ -151,12 +188,6 @@
       cursor: pointer;
     }
 
-    #formMessage {
-      margin-top: 15px;
-      font-size: 14px;
-      display: none;
-    }
-
     footer {
       margin-top: 70px;
       font-size: 14px;
@@ -211,6 +242,7 @@
       <input type="hidden" name="_subject" value="Nuova richiesta dal sito">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://danielezarlenga.it/?inviato=ok">
 
       <input type="text" name="nome" placeholder="Il tuo nome" required>
       <input type="email" name="email" placeholder="La tua email" required>
@@ -223,7 +255,8 @@
         <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
       </div>
 
-      <input type="hidden" name="azione" id="azione" required>
+      <!-- tolto required -->
+      <input type="hidden" name="azione" id="azione">
 
       <textarea name="messaggio" rows="4"
         placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)">
@@ -231,8 +264,6 @@
 
       <button type="submit">Invia richiesta</button>
     </form>
-
-    <div id="formMessage"></div>
   </section>
 
   <footer>
