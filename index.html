@@ -123,30 +123,31 @@
       font-size: 14px;
     }
 
-    /* SCELTA */
-    .form-choice {
-      margin-bottom: 20px;
-      font-size: 15px;
-    }
-
-    .form-choice strong {
-      display: block;
-      margin-bottom: 12px;
-    }
-
-    .radio-group label {
+    /* SCELTA CON BOTTONI */
+    .choice-buttons {
       display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 12px;
+      margin: 14px 0 20px;
+    }
+
+    .choice-btn {
+      flex: 1;
+      padding: 12px;
+      background: transparent;
+      border: 2px solid #8fbfc5;
+      color: #8fbfc5;
+      border-radius: 4px;
+      font-weight: bold;
       cursor: pointer;
+      text-align: center;
     }
 
-    .radio-group input[type="radio"] {
-      margin: 0;
+    .choice-btn.active {
+      background: #8fbfc5;
+      color: #0b2f33;
     }
 
-    .form-box button {
+    .form-box button[type="submit"] {
       width: 100%;
       background: #8fbfc5;
       color: #0b2f33;
@@ -172,21 +173,6 @@
       font-size: 14px;
       color: #b0bec5;
       text-align: center;
-    }
-
-    /* DESKTOP */
-    @media (min-width: 900px) {
-      .image-row {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 40px;
-        text-align: left;
-      }
-
-      .image-row img {
-        margin: 0;
-      }
     }
   </style>
 </head>
@@ -246,24 +232,26 @@
       <input type="email" name="Email" placeholder="La tua email" required>
       <input type="tel" name="Telefono" placeholder="Il tuo telefono" required>
 
-      <!-- SCELTA CON FLAG ALLINEATI -->
-      <div class="form-choice">
-        <strong>Di cosa hai bisogno?</strong>
+      <strong>Di cosa hai bisogno?</strong>
 
-        <div class="radio-group">
-          <label>
-            <input type="radio" name="Richiesta" value="Devo vendere" required>
-            Devo vendere
-          </label>
-
-          <label>
-            <input type="radio" name="Richiesta" value="Devo affittare">
-            Devo affittare
-          </label>
-        </div>
+      <!-- BOTTONI DI SCELTA -->
+      <div class="choice-buttons">
+        <button type="button" class="choice-btn" data-value="Devo vendere">
+          Devo vendere
+        </button>
+        <button type="button" class="choice-btn" data-value="Devo affittare">
+          Devo affittare
+        </button>
       </div>
 
-      <textarea name="Messaggio" rows="4" placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)"></textarea>
+      <!-- CAMPO NASCOSTO PER SALVARE LA SCELTA -->
+      <input type="hidden" name="Richiesta" id="richiesta" required>
+
+      <textarea
+        name="Messaggio"
+        rows="4"
+        placeholder="Scrivimi due righe sul tuo immobile (zona, tipologia, situazione attuale)">
+      </textarea>
 
       <button type="submit">Invia richiesta</button>
     </form>
@@ -277,6 +265,20 @@
   </footer>
 
 </div>
+
+<!-- SCRIPT PER I BOTTONI -->
+<script>
+  const buttons = document.querySelectorAll('.choice-btn');
+  const hiddenInput = document.getElementById('richiesta');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      hiddenInput.value = btn.dataset.value;
+    });
+  });
+</script>
 
 </body>
 </html>
