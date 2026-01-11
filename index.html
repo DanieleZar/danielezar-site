@@ -106,6 +106,7 @@
       padding: 35px 30px;
       border-radius: 6px;
       text-align: left;
+      position: relative;
     }
 
     .form-box h3 {
@@ -123,7 +124,7 @@
       font-size: 14px;
     }
 
-    /* SCELTA CON BOTTONI */
+    /* BOTTONI SCELTA */
     .choice-buttons {
       display: flex;
       gap: 12px;
@@ -139,7 +140,6 @@
       border-radius: 4px;
       font-weight: bold;
       cursor: pointer;
-      text-align: center;
     }
 
     .choice-btn.active {
@@ -156,6 +156,45 @@
       border-radius: 4px;
       font-weight: bold;
       cursor: pointer;
+    }
+
+    /* MESSAGGIO ELEGANTE INLINE */
+    .form-message {
+      display: none;
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 4px;
+      background: rgba(143,191,197,0.15);
+      color: #e0f2f1;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .form-message.error {
+      background: rgba(255, 120, 120, 0.15);
+      color: #ffdada;
+    }
+
+    /* SCHERMATA CONFERMA */
+    .confirmation-screen {
+      display: none;
+      background: rgba(6,33,37,0.95);
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      padding: 40px 25px;
+      text-align: center;
+    }
+
+    .confirmation-screen h4 {
+      margin-bottom: 15px;
+      color: #8fbfc5;
+      font-size: 22px;
+    }
+
+    .confirmation-screen p {
+      font-size: 16px;
+      color: #e0f2f1;
     }
 
     /* IMMAGINE SUPPORTO */
@@ -198,35 +237,30 @@
   <!-- CHI SONO -->
   <section class="about">
     <img src="daniele.jpg" alt="Daniele Zarlenga">
-
     <h3>Chi sono</h3>
-
     <p>
       Lavoro con imprenditori e proprietari di immobili commerciali che vogliono
       vendere o locare in modo serio, senza affidarsi a promesse irrealistiche.
     </p>
-
     <p>
       Ho visto troppe operazioni partire male:
       prezzo deciso “a sensazione”, annunci copiati, mesi persi senza risultati.
       Per questo oggi il mio lavoro è consulenziale prima che commerciale:
       analisi, strategia, posizionamento e solo dopo numeri.
     </p>
-
     <p>
       Il mio obiettivo non è promettere tempi impossibili,
       ma aiutarti a prendere decisioni lucide che tutelino davvero il valore del tuo immobile.
     </p>
   </section>
 
-  <!-- IMMAGINE DI SUPPORTO -->
   <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="side-image">
 
   <!-- FORM CONTATTI -->
   <section id="contatti" class="form-box">
     <h3>Parliamo del tuo immobile</h3>
 
-    <form action="mailto:contatti@danielezarlenga.it" method="post" enctype="text/plain">
+    <form id="contactForm" action="mailto:contatti@danielezarlenga.it" method="post" enctype="text/plain">
 
       <input type="text" name="Nome" placeholder="Il tuo nome" required>
       <input type="email" name="Email" placeholder="La tua email" required>
@@ -234,18 +268,12 @@
 
       <strong>Di cosa hai bisogno?</strong>
 
-      <!-- BOTTONI DI SCELTA -->
       <div class="choice-buttons">
-        <button type="button" class="choice-btn" data-value="Devo vendere">
-          Devo vendere
-        </button>
-        <button type="button" class="choice-btn" data-value="Devo affittare">
-          Devo affittare
-        </button>
+        <button type="button" class="choice-btn" data-value="Devo vendere">Devo vendere</button>
+        <button type="button" class="choice-btn" data-value="Devo affittare">Devo affittare</button>
       </div>
 
-      <!-- CAMPO NASCOSTO PER SALVARE LA SCELTA -->
-      <input type="hidden" name="Richiesta" id="richiesta" required>
+      <input type="hidden" name="Richiesta" id="richiesta">
 
       <textarea
         name="Messaggio"
@@ -254,10 +282,18 @@
       </textarea>
 
       <button type="submit">Invia richiesta</button>
+
+      <!-- MESSAGGIO INLINE -->
+      <div class="form-message" id="formMessage"></div>
     </form>
+
+    <!-- SCHERMATA DI CONFERMA -->
+    <div class="confirmation-screen" id="confirmationScreen">
+      <h4>Richiesta inviata</h4>
+      <p id="confirmationText"></p>
+    </div>
   </section>
 
-  <!-- IMMAGINE FINALE -->
   <img src="spazio-interno.jpg" alt="Spazio commerciale interno" class="section-image">
 
   <footer>
@@ -266,17 +302,63 @@
 
 </div>
 
-<!-- SCRIPT PER I BOTTONI -->
 <script>
   const buttons = document.querySelectorAll('.choice-btn');
   const hiddenInput = document.getElementById('richiesta');
+  const form = document.getElementById('contactForm');
+  const messageBox = document.getElementById('formMessage');
+  const confirmationScreen = document.getElementById('confirmationScreen');
+  const confirmationText = document.getElementById('confirmationText');
 
+  // Gestione scelta
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       hiddenInput.value = btn.dataset.value;
+
+      messageBox.style.display = 'none';
+      messageBox.classList.remove('error');
     });
+  });
+
+  // Gestione invio
+  form.addEventListener('submit', function (e) {
+
+    if (!hiddenInput.value) {
+      e.preventDefault();
+      messageBox.textContent = 'Seleziona prima se vuoi vendere o affittare il tuo immobile.';
+      messageBox.classList.add('error');
+      messageBox.style.display = 'block';
+      return;
+    }
+
+    // Messaggio elegante inline
+    let testoInline = '';
+    let testoConferma = '';
+
+    if (hiddenInput.value === 'Devo vendere') {
+      testoInline = 'Grazie. La tua richiesta per la vendita è stata registrata.';
+      testoConferma = 'Ti contatterò personalmente a breve per valutare insieme la strategia migliore per la vendita del tuo immobile.';
+    }
+
+    if (hiddenInput.value === 'Devo affittare') {
+      testoInline = 'Grazie. La tua richiesta per la locazione è stata registrata.';
+      testoConferma = 'Ti contatterò personalmente a breve per valutare insieme la strategia migliore per la locazione del tuo immobile.';
+    }
+
+    // Mostra messaggio inline
+    messageBox.textContent = testoInline;
+    messageBox.classList.remove('error');
+    messageBox.style.display = 'block';
+
+    // Mostra schermata di conferma dopo un breve delay
+    e.preventDefault();
+    setTimeout(() => {
+      form.style.display = 'none';
+      confirmationText.textContent = testoConferma;
+      confirmationScreen.style.display = 'block';
+    }, 800);
   });
 </script>
 
