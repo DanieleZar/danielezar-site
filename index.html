@@ -19,23 +19,33 @@
       position: sticky;
       top: 0;
       background: #062125;
-      padding: 12px 20px;
+      padding: 10px 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
+      flex-wrap: wrap;
     }
 
     header .logo {
-      max-width: 90px;
+      max-width: 80px;
+    }
+
+    header .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
     }
 
     header .contacts a {
       color: #8fbfc5;
       text-decoration: none;
       font-weight: bold;
-      margin-left: 15px;
-      font-size: 14px;
+      font-size: 13px;
+      background: rgba(255,255,255,0.08);
+      padding: 6px 10px;
+      border-radius: 4px;
     }
 
     /* CONTAINER */
@@ -56,18 +66,37 @@
       font-size: 18px;
       font-weight: normal;
       color: #cfd8dc;
-      margin-bottom: 25px;
+      margin-bottom: 10px;
     }
 
-    .hero-buttons a {
-      display: inline-block;
-      background: #8fbfc5;
-      color: #0b2f33;
-      padding: 12px 22px;
-      margin: 6px;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
+    /* SEZIONE CHI SONO */
+    .about {
+      margin: 60px 0;
+      text-align: left;
+      background: rgba(255,255,255,0.06);
+      padding: 30px;
+      border-radius: 6px;
+    }
+
+    .about img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #8fbfc5;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .about h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #e0f2f1;
+      font-size: 16px;
+      margin-bottom: 15px;
     }
 
     /* FORM */
@@ -75,7 +104,7 @@
       background: rgba(255,255,255,0.06);
       padding: 25px;
       border-radius: 6px;
-      margin: 50px 0;
+      margin: 60px 0;
       text-align: left;
     }
 
@@ -109,7 +138,7 @@
     /* IMMAGINI */
     .section-image {
       width: 100%;
-      max-width: 700px;
+      max-width: 650px;
       margin: 40px auto;
       display: block;
       border-radius: 8px;
@@ -129,9 +158,12 @@
 
 <header>
   <img src="logo-dz.png" alt="Logo" class="logo">
+
   <div class="contacts">
     <a href="mailto:contatti@danielezarlenga.it">Email</a>
     <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
+    <a href="#contatti">Devo vendere</a>
+    <a href="#contatti">Devo affittare</a>
   </div>
 </header>
 
@@ -141,23 +173,34 @@
   <section class="hero">
     <h1>Daniele Zarlenga</h1>
     <h2>Consulente immobiliare per immobili commerciali</h2>
+  </section>
 
-    <div class="hero-buttons">
-      <a href="#contatti">Devo vendere</a>
-      <a href="#contatti">Devo affittare</a>
-    </div>
+  <!-- CHI SONO -->
+  <section class="about">
+    <img src="daniele.jpg" alt="Daniele Zarlenga">
+
+    <h3>Chi sono</h3>
+
+    <p>
+      Lavoro con imprenditori e proprietari di immobili commerciali che vogliono
+      vendere o locare in modo serio, senza affidarsi a promesse irrealistiche.
+    </p>
+
+    <p>
+      Nel tempo ho visto troppe operazioni partire male:
+      prezzo messo “a sensazione”, annunci copiati, mesi persi senza risultati.
+      Per questo oggi il mio lavoro è consulenziale prima che commerciale:
+      analisi, strategia, posizionamento e solo dopo numeri.
+    </p>
+
+    <p>
+      Il mio obiettivo non è promettere tempi impossibili,
+      ma aiutarti a prendere decisioni lucide che tutelino il valore del tuo immobile.
+    </p>
   </section>
 
   <!-- IMMAGINE CONTESTO -->
   <img src="edificio-commerciale.jpg" alt="Edificio commerciale" class="section-image">
-
-  <!-- TESTO -->
-  <p>
-    Lavoro con imprenditori e proprietari che vogliono
-    <strong>vendere o locare un immobile commerciale</strong>
-    con una strategia fondata su dati reali e decisioni lucide,
-    senza affidarsi a promesse irrealistiche.
-  </p>
 
   <!-- FORM CONTATTI -->
   <section id="contatti" class="form-box">
