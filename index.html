@@ -5,14 +5,6 @@
   <title>Daniele Zarlenga – Consulenza Immobiliare Commerciale</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("QI5iw080SMexWj7VE"); // PUBLIC KEY CORRETTA
-    })();
-  </script>
-
   <style>
     body {
       margin: 0;
@@ -212,7 +204,13 @@
   <section id="contatti" class="form-box">
     <h3>Parliamo del tuo immobile</h3>
 
-    <form id="contactForm">
+    <!-- FORM con FormSubmit -->
+    <form action="https://formsubmit.co/contatti@danielezarlenga.it" method="POST">
+
+      <!-- Impostazioni FormSubmit -->
+      <input type="hidden" name="_subject" value="Nuova richiesta dal sito">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
 
       <input type="text" name="nome" placeholder="Il tuo nome" required>
       <input type="email" name="email" placeholder="La tua email" required>
@@ -238,7 +236,7 @@
   </section>
 
   <footer>
-    © 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
+    ©️ 2026 – Daniele Zarlenga · Consulenza immobiliare commerciale
   </footer>
 
 </div>
@@ -253,42 +251,6 @@
       buttons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       hiddenInput.value = btn.dataset.value;
-    });
-  });
-
-  // invio form con EmailJS
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const msgBox = document.getElementById("formMessage");
-    msgBox.style.display = "block";
-    msgBox.style.color = "#cfd8dc";
-    msgBox.innerHTML = "Invio in corso...";
-
-    emailjs.sendForm(
-      "service_rx3qo91",      // SERVICE ID CORRETTO
-      "template_e7tleok",    // TEMPLATE ID
-      this
-    ).then(function() {
-
-      msgBox.innerHTML =
-        "<strong>Richiesta inviata con successo.</strong><br>" +
-        "Ti contatterò personalmente il prima possibile.";
-      msgBox.style.color = "#8fbfc5";
-
-      document.getElementById("contactForm").reset();
-      buttons.forEach(b => b.classList.remove('active'));
-      hiddenInput.value = "";
-
-    }, function(error) {
-
-      msgBox.innerHTML =
-        "<strong>Errore nell’invio.</strong><br>" +
-        "Se il problema persiste, scrivimi a " +
-        "<a href='mailto:contatti@danielezarlenga.it'>contatti@danielezarlenga.it</a>.";
-      msgBox.style.color = "#ff6b6b";
-
-      console.error("EmailJS error:", error);
     });
   });
 </script>
