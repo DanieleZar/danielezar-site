@@ -23,12 +23,17 @@
       background: #062125;
       padding: 16px 22px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-between;   /* SINISTRA / DESTRA reali */
       align-items: center;
       z-index: 1000;
     }
     .header-left .logo { max-width: 120px; }
-    .header-right { display: flex; align-items: center; gap: 16px; }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
     .header-right a {
       color: #8fbfc5;
       text-decoration: none;
@@ -110,25 +115,45 @@
 
     /* ===== POPUP ===== */
     .popup-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.65);
-      display: none; justify-content: center; align-items: center;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.65);
+      display: none;
+      justify-content: center;
+      align-items: center;
       z-index: 99999;
     }
     .popup-box {
-      position: relative; background: #062125; border: 2px solid #8fbfc5;
-      padding: 28px 26px 24px; border-radius: 10px;
-      max-width: 420px; width: 90%; text-align: center; color: #ffffff;
+      position: relative;
+      background: #062125;
+      border: 2px solid #8fbfc5;
+      padding: 28px 26px 24px;
+      border-radius: 10px;
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+      color: #ffffff;
       box-shadow: 0 0 30px rgba(0,0,0,0.5);
       animation: popupIn .25s ease-out;
     }
-    @keyframes popupIn { from { transform: scale(.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    @keyframes popupIn {
+      from { transform: scale(.9); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
     .popup-x {
-      position: absolute; top: 8px; right: 10px;
-      font-size: 20px; color: #8fbfc5; cursor: pointer;
+      position: absolute;
+      top: 8px; right: 10px;
+      font-size: 20px;
+      color: #8fbfc5;
+      cursor: pointer;
     }
     .popup-close-btn {
-      background: #8fbfc5; color: #0b2f33; border: none;
-      padding: 10px 18px; border-radius: 4px; font-weight: bold; cursor: pointer;
+      background: #8fbfc5;
+      color: #0b2f33;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
     }
 
     @media (max-width: 768px) {
@@ -142,9 +167,10 @@
 <body>
 
 <header>
-  <div class="header-right">
+  <div class="header-left">
     <img src="logo-dz.png" alt="Logo" class="logo">
   </div>
+
   <div class="header-right">
     <a href="mailto:contatti@danielezarlenga.it">Email</a>
     <a href="https://wa.me/393496115240" target="_blank">WhatsApp</a>
@@ -203,7 +229,7 @@
   </footer>
 </div>
 
-<!-- AUDIO (suono discreto) -->
+<!-- AUDIO -->
 <audio id="notifySound" preload="auto">
   <source src="https://assets.mixkit.co/sfx/preview/mixkit-positive-interface-beep-221.mp3" type="audio/mpeg">
 </audio>
@@ -231,9 +257,11 @@
       hiddenInput.value = btn.dataset.value;
 
       if (btn.dataset.value === "Devo vendere") {
-        messageBox.value = "Ho un immobile commerciale da vendere e desidero essere contattato per una valutazione professionale.";
+        messageBox.value =
+          "Ho un immobile commerciale da vendere e desidero essere contattato per una valutazione professionale.";
       } else {
-        messageBox.value = "Ho un immobile commerciale da affittare e desidero essere contattato per una consulenza.";
+        messageBox.value =
+          "Ho un immobile commerciale da affittare e desidero essere contattato per una consulenza.";
       }
     });
   });
@@ -246,7 +274,6 @@
 
     overlay.style.display = "flex";
 
-    // Riproduce il suono se il browser lo consente
     if (sound) {
       sound.play().catch(() => {});
     }
