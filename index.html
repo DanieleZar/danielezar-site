@@ -250,14 +250,15 @@
       Ti risponderò personalmente.
     </div>
 
-    <!-- FORM FUNZIONANTE -->
-    <form action="https://formsubmit.co/contatti@danielezarlenga.it" method="POST">
+    <!-- FORM DEFINITIVO -->
+    <form action="https://formsubmit.co/Danielezarlenga@libero.it" method="POST">
 
-      <!-- CONFIGURAZIONE STABILE FORMSUBMIT -->
-      <input type="hidden" name="_subject" value="Nuova richiesta dal sito">
+      <!-- CONFIGURAZIONE FORMSUBMIT -->
+      <input type="hidden" name="_subject" value="Nuova richiesta dal sito – Daniele Zarlenga">
       <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://danielezarlenga.it/#thankyou">
       <input type="hidden" name="_autoresponse"
-             value="Grazie per avermi contattato. Ho ricevuto la tua richiesta e ti risponderò personalmente a breve.">
+             value="Grazie per avermi contattato. Ho ricevuto la tua richiesta e ti risponderò personalmente nel più breve tempo possibile.">
 
       <input type="text" name="nome" placeholder="Nome e cognome" required>
       <input type="email" name="email" placeholder="Email" required>
@@ -319,6 +320,16 @@
 
   function closePopup(){
     document.getElementById("popupOverlay").style.display="none";
+  }
+
+  function showPopup(){
+    document.getElementById("popupOverlay").style.display="flex";
+    document.getElementById("notifySound").play();
+  }
+
+  // attivazione popup + suono dopo invio
+  if(window.location.hash === "#thankyou"){
+    window.addEventListener("load", showPopup);
   }
 </script>
 
