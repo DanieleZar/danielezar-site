@@ -250,16 +250,15 @@
       Ti risponderò personalmente.
     </div>
 
-    <!-- FORM DEFINITIVO -->
-    <form action="https://formsubmit.co/Danielezarlenga@libero.it" method="POST">
+    <!-- FORM RIPRISTINATO SU OVH -->
+    <form action="https://formsubmit.co/contatti@danielezarlenga.it" method="POST">
 
       <!-- CONFIGURAZIONE FORMSUBMIT -->
       <input type="hidden" name="_subject" value="Nuova richiesta dal sito – Daniele Zarlenga">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://danielezarlenga.it/#thankyou">
-      <input type="hidden" name="_autoresponse"
-             value="Grazie per avermi contattato. Ho ricevuto la tua richiesta e ti risponderò personalmente nel più breve tempo possibile.">
 
+      <!-- CAMPI -->
       <input type="text" name="nome" placeholder="Nome e cognome" required>
       <input type="email" name="email" placeholder="Email" required>
       <input type="tel" name="telefono" placeholder="Telefono" required>
@@ -300,30 +299,30 @@
 </div>
 
 <script>
-  const buttons=document.querySelectorAll('.choice-btn');
-  const hiddenInput=document.getElementById('azione');
-  const messageBox=document.getElementById('messaggio');
+  const buttons = document.querySelectorAll('.choice-btn');
+  const hiddenInput = document.getElementById('azione');
+  const messageBox = document.getElementById('messaggio');
 
   buttons.forEach(btn=>{
     btn.addEventListener('click',()=>{
       buttons.forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
-      hiddenInput.value=btn.dataset.value;
+      hiddenInput.value = btn.dataset.value;
 
-      if(btn.dataset.value==="Devo vendere"){
-        messageBox.value="Ho un immobile commerciale da vendere e desidero essere contattato per una valutazione professionale.";
+      if(btn.dataset.value === "Devo vendere"){
+        messageBox.value = "Ho un immobile commerciale da vendere e desidero essere contattato per una valutazione professionale.";
       }else{
-        messageBox.value="Ho un immobile commerciale da affittare e desidero essere contattato per una consulenza.";
+        messageBox.value = "Ho un immobile commerciale da affittare e desidero essere contattato per una consulenza.";
       }
     });
   });
 
   function closePopup(){
-    document.getElementById("popupOverlay").style.display="none";
+    document.getElementById("popupOverlay").style.display = "none";
   }
 
   function showPopup(){
-    document.getElementById("popupOverlay").style.display="flex";
+    document.getElementById("popupOverlay").style.display = "flex";
     document.getElementById("notifySound").play();
   }
 
